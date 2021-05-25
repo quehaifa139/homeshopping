@@ -8,41 +8,42 @@ var connection = require("./user");
 router.get('/', function(req, res, next) {
     connection.query("select * from commodity",function(err,rows){
         if(err){
-            res.render("background",{title:"用户列表",datas:[]});
+            res.render("background",{title:"商家列表",datas:[]});
         }else {
-            res.render("background",{title:"用户列表",datas:rows});
+            res.render("background",{title:"商家列表",datas:rows});
         }
     });
 }); 
 
 //实行查询操作
-router.post("/search",function(req,res,next){
-    var name = req.body.s_name;
-    
+router.post("/",function(req,res,next){
+    var id = req.body.com_id;
     var sql = "select * from commodity";
-    if(name){
-        sql += " where com_name = '"+ name +"'";
+    if(id){
+        sql += " where com_id = '"+ id +"'"  
     }
     sql.replace("and","where");
     connection.query(sql,function(err,rows){
         if(err){
             res.send("查询失败: "+err);
         }else{
-            res.render("background",{title:"用户列表",datas:rows,s_name:name});
+            res.render("background",{title:"用户列表",datas:rows});
         }
     });
 });
 
 //实行删除操作
-router.get("/:com_id",function(req,res){
-    var id = req.params.com_id;
-    connection.query("delete from commodity where com_id = " + id,function(err,rows){
+router.get("/del/:id",function(req,res){
+    var id = req.params.id;
+    connection.query("delete from commodity where id = '"+id+"' ",function(err,rows){
         if(err){
+            console.log(err);
             res.send("删除失败"+err);
         }else {
-            res.redirect("backgroud");
+            res.redirect("/background");
         }
     });
 });
+
 
 module.exports = router;

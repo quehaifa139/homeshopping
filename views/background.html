@@ -98,7 +98,7 @@
 <div>
     <div class="nav_bar">
         <form action="/background" method="POST">
-        <input placeholder="What you want to query" name="s_name" value="<%= datas.com_name %>">
+        <input placeholder="What you want to query" name="com_id" value="<%= datas.com_id %>">
         <button type="submit" class="search">search</button>
     </form>
         <a href="/add">add</a>
@@ -125,8 +125,10 @@
                     <td><%= datas[i].price %></td>
                     <td><%= datas[i].descript %></td>
                     <td>
-                        <a href="/background/<%= datas[i].com_id %>">delete</a>
-                        <a href="/update/<%= datas[i].com_id %>">update</a>
+                        <a href="/background/del/<%= datas[i].id %>" >delete</a>
+                    
+                        <a href="/update/toUpdate/<%= datas[i].com_id %>" >update</a>
+                    
                     </td>
                 </tr>
                 <% } %>
