@@ -1,0 +1,108 @@
+
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!doctype html>
+<html>
+<head>
+<title>商家登录注册</title>
+<!-- for-mobile-apps -->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<meta name="keywords" content="Slide Multi Forms Responsive, Login form web template, Sign up Web Templates, Flat Web Templates, Login signup Responsive web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+<!-- //for-mobile-apps -->
+<link href="//fonts.googleapis.com/css?family=Abril+Fatface&amp;subset=latin-ext" rel="stylesheet">
+<link href='//fonts.googleapis.com/css?family=Roboto+Condensed:400,700italic,700,400italic,300italic,300' rel='stylesheet' type='text/css'>
+<!-- font-awesome icons -->
+<link href="../merchant/css/font-awesome.css" rel="stylesheet"> 
+<!-- //font-awesome icons -->
+<link href="../merchant/css/style.css" rel="stylesheet" type="text/css" media="all" />
+<script src="../merchant/js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+
+		$('.hub-slider-slides ul').hubSlider({
+			selector: $('li'),
+			button: {
+				next: $('.hub-slider-arrow_next'),
+				prev: $('.hub-slider-arrow_prev')
+			},
+			transition: '0.7s',
+			startOffset: 30,
+			auto: true,
+			time: 2 // secondly
+		});
+
+        })
+    </script>
+</head>
+<body>
+<div class="content" id="Main-Content">
+	<h1>
+        商家登录注册
+    </h1>
+	<div class="w3ls-slider">
+		<div class="hub-slider">
+			<div class="hub-slider-slides">
+				<ul>
+			
+					<li>
+						<!-- 注册部分 -->
+						<div class="login-form agileits-right"> 
+							<div class="agile-row">
+								<h3>Sign Up</h3> 
+								<div class="login-agileits-top"> 	
+		
+										<p>Merchant Name </p>
+										<input type="text" id="name-one" name="name-one" />
+										<p>Password</p>
+										<input type="password" id="password-one" name="password" /> 
+										<p>Confirm Password</p>
+										<input type="password" id="password-two" name="password" /> 
+										<p>Merchant id</p>
+										<input type="text" id="mer_id-one" name="mer_id"/>
+                                        <p>phonenumber</p>
+										<input type="text" id="phonenumber"/>
+										<label class="anim">
+											<input type="checkbox" class="checkbox">
+											<span> Remember me ?</span> 
+										</label>   
+										<P><button type="submit" id="enter"  style="width: 400PX;height: 40PX;background-color: red;">SIGN UP</button></P>
+        
+								</div>  
+							</div>  
+						</div> 
+					</li>
+                    
+          </ul>
+          </div>          
+	</div>
+</div>
+	<script type="text/javascript" src="../merchant/js/hubslider.js"></script>
+  
+   <script>
+
+    //注册时点击事件
+     $("#enter").click(function(){
+		$.ajax({
+			type:"post",
+			url :"/merchant",
+			data:{"name":$("#name-one").val(),"password":$("#password-one").val(),"mer_id":$("#mer_id-one").val(),"phonenumber":$("#phonenumber").val()},
+            success:function(data){
+				if(data.status==1){
+					alert("注册成功");
+                    window.location.href="/merlogin"
+				}
+			}
+        
+		})
+        
+	})
+</script>
+</div>
+</body>
+</html>

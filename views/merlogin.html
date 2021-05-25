@@ -1,0 +1,103 @@
+
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!doctype html>
+<html>
+<head>
+<title>商家登录注册</title>
+<!-- for-mobile-apps -->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<meta name="keywords" content="Slide Multi Forms Responsive, Login form web template, Sign up Web Templates, Flat Web Templates, Login signup Responsive web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+<!-- //for-mobile-apps -->
+<link href="//fonts.googleapis.com/css?family=Abril+Fatface&amp;subset=latin-ext" rel="stylesheet">
+<link href='//fonts.googleapis.com/css?family=Roboto+Condensed:400,700italic,700,400italic,300italic,300' rel='stylesheet' type='text/css'>
+<!-- font-awesome icons -->
+<link href="../merchant/css/font-awesome.css" rel="stylesheet"> 
+<!-- //font-awesome icons -->
+<link href="../merchant/css/style.css" rel="stylesheet" type="text/css" media="all" />
+<script src="../merchant/js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+
+		$('.hub-slider-slides ul').hubSlider({
+			selector: $('li'),
+			button: {
+				next: $('.hub-slider-arrow_next'),
+				prev: $('.hub-slider-arrow_prev')
+			},
+			transition: '0.7s',
+			startOffset: 30,
+			auto: true,
+			time: 2 // secondly
+		});
+
+        })
+    </script>
+</head>
+<body>
+<!-- 登录部分-->
+<div class="login-form login-form-left"> 
+    <div class="agile-row">
+        <h2>Sign In</h2> 
+        <div class="login-agileits-top"> 	
+                <p>User Name </p>
+                <input type="text" id="name" name="name"/>
+                <p>Password</p>
+                <input type="password" id="password" name="password"/>  
+                <p>mer_id </p>
+                <input type="text" id="mer_id" name="mer_id"/>  
+                <label class="anim">
+                <input type="checkbox" class="checkbox">
+                <span> Remember me ?</span> 
+                </label>   
+                <input type="submit" value="Sign In" id="login"> 
+            
+        </div> 
+        <div class="footer-social-grids">
+            <p>OR</p>
+            <div class="footer-social-top">
+                <div class="social-grid">
+                    <a href="#"><i class="fa fa-facebook"></i></a>
+                </div>
+                <div class="social-grid">
+                    <a href="#"><i class="fa fa-twitter"></i></a>
+                </div>
+                <div class="social-grid">
+                    <a href="#"><i class="fa fa-rss"></i></a>
+                </div>
+                <div class="clear"> </div>
+            </div>
+        </div>
+        <div class="login-agileits-bottom"> 
+            <h6><a href="#">Forgot password?</a></h6>
+        </div> 
+    </div>  
+</div> 
+<script type="text/javascript" src="../merchant/js/hubslider.js"></script>
+<script>
+    $("#login").click(function(){
+		$.ajax({
+			type:"post",
+			url :"/merlogin",
+			data:{"name":$("#name").val(),"password":$("#password").val()},
+			success:function(data){
+                console.log(status)
+				if(data.status==1){
+					alert("登录成功");
+					window.location.href = "/background"
+				}else{
+					alert("用户名或密码错误，登录失败，请重新登录")
+				}
+			}
+		})
+	})
+</script>
+
+</body>
+</html>

@@ -6,12 +6,24 @@ var logger = require('morgan');
 var ejs = require('ejs');
 
 
+/* 引入body-parser */
+
 var home_pageRouter = require('./routes/home_page');
 var shopRouter = require('./routes/shop');
 var productRouter = require('./routes/product');
 var loginRouter = require('./routes/login');
+//用户注册路由
 var registerRouter = require('./routes/register');
-
+//管理员注册路由
+var merchantRouter = require('./routes/merchant');
+//管理员登录路由
+var merloginRouter = require('./routes/merlogin');
+//后台路由
+var backgroundRouter = require('./routes/background');
+//新增路由
+var addRouter = require('./routes/add');
+//修改路由
+var updateRouter = require('./routes/update');
 var app = express();
 
 // view engine setup
@@ -30,7 +42,16 @@ app.use('/shop',shopRouter);
 app.use('/product',productRouter);
 app.use('/login',loginRouter);
 app.use('/register',registerRouter);
-
+//管理员注册
+app.use('/merchant',merchantRouter);
+//管理员登陆
+app.use('/merlogin',merloginRouter);
+//后台
+app.use('/background',backgroundRouter);
+//新增
+app.use('/add',addRouter);
+//修改
+app.use('/update',updateRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -46,6 +67,7 @@ app.use(function(err, req, res, next) {
   // render the error page
   res.status(err.status || 500);
   res.render('error');
+  console.log(err);
 });
 
 module.exports = app;

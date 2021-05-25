@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>后台数据</title>
+</head>
+<style>
+    .nav_bar{
+        width: 1800px;
+        height: 170px;
+        border: black solid 1px;
+        border-left: none;
+        border-right: none;
+    }
+   .nav_bar input{
+    display: inline-block;
+    width: 240px;
+    height: 35px;
+    margin-top: 59px;
+    margin-left: 373px;
+   }
+   .nav_bar button{
+       width: 130px;
+       height: 40px;
+       background-color: cadetblue;
+       border-radius: 6px;
+       color: white;
+   } 
+   .nav_bar a{
+       position: absolute;
+       width: 130px;
+       height: 40px;
+       background-color: cadetblue;
+       border-radius: 6px;
+      display: inline-block;
+      text-align: center;
+      margin-left: 857px;
+      margin-top: -41px;
+      line-height: 40px;
+      text-decoration: none;
+      color: white;
+   } 
+.add{
+    margin-left: 110px;
+}
+.tab{
+    margin-top: 30px;
+}
+.com_id{
+    width: 120px;
+}
+.com_name{
+    width: 150px;
+}
+.type{
+    width: 160px;
+}
+.price{
+    width: 160px;
+}
+.descript{
+    width: 360px;
+}
+.anniu{
+    width: 220px;
+}
+.tab table tbody tr td a{
+       width: 90px;
+       height: 40px;
+       background-color: cadetblue;
+       border-radius: 6px;
+       display: inline-block;
+       text-align: center;
+       text-decoration: none;
+       line-height: 40px;
+       margin: 5px;
+       color: white;
+}
+.tab table{
+    text-align: center;
+}
+.inferior{
+    margin-top: 38px;
+    margin-left: 612px;
+}
+.inferior button{
+    width: 90px;
+    height: 40px;
+    margin: 10px;
+    background-color: cadetblue;
+    border-radius: 6px;
+    color: white;
+}
+</style>
+<body>
+<div>
+    <div class="nav_bar">
+        <form action="/background" method="POST">
+        <input placeholder="What you want to query" name="s_name" value="<%= datas.com_name %>">
+        <button type="submit" class="search">search</button>
+    </form>
+        <a href="/add">add</a>
+    </div>
+    <div class="tab">
+        <table border="2px" align="center" cellspacing="0px" cellpadding="10px">
+            <thead>
+               <caption>家居后台数据</caption>
+                <tr>
+                    <th class="com_id">com_id</th>
+                    <th class="com_name">com_name</th>
+                    <th class="type">c_type</th>
+                    <th class="price">price</th>
+                    <th class="descript">descript</th>
+                    <th class="anniu">buttton</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% for(var i = 0; i < datas.length; i++) {%>
+                <tr>
+                    <td><%= datas[i].com_id %></td>
+                    <td><%= datas[i].com_name %></td>
+                    <td><%= datas[i].c_type %></td>
+                    <td><%= datas[i].price %></td>
+                    <td><%= datas[i].descript %></td>
+                    <td>
+                        <a href="/background/<%= datas[i].com_id %>">delete</a>
+                        <a href="/update/<%= datas[i].com_id %>">update</a>
+                    </td>
+                </tr>
+                <% } %>
+            </tbody>
+        </table>
+    </div>
+    <div class="inferior">
+        <button>up</button>
+        <button>down</button>
+    </div>
+
+</div>
+
+</body>
+</html>

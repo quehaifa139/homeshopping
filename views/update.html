@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>修改页面</title>
+</head>
+<body>
+<form action="/update" method="post">
+    <input type="hidden" value="{{datas[0].id}}" name="id">
+    com_id：<input type="text" name="com_id" value="{{datas[0].com_id}}"><br>
+    com_name：<input type="text" name="com_name" value="{{datas[0].com_name}}"><br>
+    c_type：<input type="text" name="c_type" value="{{datas[0].c_type}}"><br>
+    price：<input type="text" name="price" value="{{datas[0].price}}"><br>
+    descript：<input type="text" name="descript" value="{{datas[0].descript}}"><br>
+    
+    <input type="submit" value="提交">
+</form>
+</body>
+</html>
