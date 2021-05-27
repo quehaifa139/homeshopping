@@ -38,7 +38,7 @@ router.get("/del/:id",function(req,res){
     connection.query("delete from commodity where id = '"+id+"' ",function(err,rows){
         if(err){
             console.log(err);
-            res.send("删除失"+err);
+            
         }else {
             res.redirect("/background");
         }
