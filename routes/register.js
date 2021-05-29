@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 var connection = require("./user");
-var formidable = require("formidable");
+
 
 /* GET home page. */
 router.get('/', function(req, res, next) {

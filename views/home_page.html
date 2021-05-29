@@ -6,12 +6,9 @@
         <title>名品家居</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <!-- <link rel="manifest" href="site.webmanifest"> -->
         <link rel="apple-touch-icon" href="icon.png">
         <!-- Place favicon.ico in the root directory -->
         <link rel="shortcut icon" href="../static/images/icon/favicons.png" type="image/x-icon">
-
         <!-- All css here -->
         <link rel="stylesheet" href="../static/css/bootstrap.min.css">
         <link rel="stylesheet" href="../static/css/fontawesome-all.min.css">
@@ -210,7 +207,7 @@
                                         <span class="primary-color">Decoration</span>
                                         <h3 class="text-white pt-10 pb-30">Featured Lifestyle</h3>
                                         <p class="text-white">On Pre – Sep 6th Free shipping</p>
-                                        <a href="single-product.html" class="btn2 text-white position-relative d-inline-block pt-45 pb-6">Explore Items</a>
+                                        <a href="/product" class="btn2 text-white position-relative d-inline-block pt-45 pb-6">Explore Items</a>
                                     </div><!-- /section-content -->
                                 </div>
                             </div><!-- /col -->
@@ -224,7 +221,7 @@
                                         <div class="sale-off-img m-auto pt-30 pb-50">
                                             <img src="../static/picture/text-bg-home.png" alt="">
                                         </div>
-                                        <a href="single-product.html" class="btn black-color border-black">Explore Items</a>
+                                        <a href="/product" class="btn black-color border-black">Explore Items</a>
                                     </div><!-- /section-content -->
                                 </div>
                             </div><!-- /col -->
@@ -235,7 +232,7 @@
                                         <span class="primary-color">Lighting</span>
                                         <h3 class="text-white pt-10 pb-30">Trending Lighting</h3>
                                         <p class="text-white">Free delivery + Assembly on most items</p>
-                                        <a href="single-product.html" class="btn2 text-white position-relative d-inline-block pt-45 pb-6">Explore Items</a>
+                                        <a href="/product" class="btn2 text-white position-relative d-inline-block pt-45 pb-6">Explore Items</a>
                                     </div><!-- /section-content -->
                                 </div>
                             </div><!-- /col -->
@@ -257,12 +254,13 @@
                         </div><!-- /col -->
                     </div><!-- /row -->
                     <div class="row">
+                        <!--开始循环部分  -->
                         <div class="col-xl-3  col-lg-3  col-md-4  col-sm-6 col-12 mb-40">
                             <div class="single-product bg-white position-relative pb-30">
                                 <div class="single-product-img position-relative">
-                                    <a href="single-product.html"><img class="height100" src="../static/picture/home-product1.jpg" alt=""></a>
+                                    <a href="/product"><img class="height100" src="../static/picture/home-product1.jpg" alt=""></a>
                                     <div class="single-product-hover-img position-absolute">
-                                        <a href="single-product.html"><img class="height100" src="../static/picture/home-product-hover-1.jpg" alt=""></a>
+                                        <a href="/product"><img class="height100" src="../static/picture/home-product-hover-1.jpg" alt=""></a>
                                     </div><!-- /single-product-hover-img -->
                                     <ul class="single-product-button d-flex position-absolute">
                                         <li data-toggle="tooltip" data-selector="true" data-placement="bottom" title="Add to cart"><a href="#"><span class="icon-shopping-bag"></span></a></li>
@@ -278,7 +276,7 @@
                                         </div>
                                     </div><!-- /countdown-time -->
                                 </div><!-- /single-product-img -->
-                                <h5 class="product-name pt-20 pl-20"><a href="single-product.html">Form Armchair Walnut Base</a></h5>
+                                <h5 class="product-name pt-20 pl-20"><a href="/product">Form Armchair Walnut Base</a></h5>
                                 <div class="product-price pl-20">
                                     <span class="black-color"><ins>$799.00</ins></span>
                                     <span class="old-price"><del>$829.00</del></span>
@@ -286,12 +284,14 @@
                                    <a href="shop.html" class="sale-tag position-absolute text-white text-uppercase d-inline-block">sale</a>
                             </div><!-- /single-product -->
                         </div><!-- /col -->
+                        <!-- 循环体开始 -->
+                                <% for(var o of data){ %>
                         <div class="col-xl-3  col-lg-3  col-md-4  col-sm-6 col-12 mb-40">
                             <div class="single-product bg-white position-relative pb-30">
                                 <div class="single-product-img position-relative">
-                                    <a href="single-product.html"><img class="height100" src="../static/picture/home-product2.jpg" alt=""></a>
+                                    <a href="/product"><img class="height100" src="../static/picture/home-product2.jpg" alt=""></a>
                                     <div class="single-product-hover-img position-absolute">
-                                        <a href="single-product.html"><img class="height100" src="../static/picture/home-product-hover-2.jpg" alt=""></a>
+                                        <a href="/product"><img class="height100" src="../static/picture/home-product-hover-2.jpg" alt=""></a>
                                         <ul class="single-product-button d-flex position-absolute">
                                             <li data-toggle="tooltip" data-selector="true" data-placement="bottom" title="Add to option"><a href="#"><span class="icon-shopping-bag"></span></a></li>
                                             <li data-toggle="tooltip" data-selector="true" data-placement="bottom" title="Utopia Towels Kitchen"><a href="#" data-toggle="modal" data-target="#product-modal"><span class="icon-eye"></span></a></li>
@@ -299,9 +299,9 @@
                                         </ul>
                                     </div><!-- /single-product-hover-img -->
                                </div><!-- /single-product-img -->
-                                <h5 class="product-name pt-20 pl-20"><a href="single-product.html">Utopia Towels Kitchen</a></h5>
+                                <h5 class="product-name pt-20 pl-20"><a href="/product"><%=o.com_name %></a></h5>
                                 <div class="product-price pl-20 d-inline-block">
-                                    <span class="black-color">$862.00</span>
+                                    <span class="black-color"><%=o.price %></span>
                                 </div>
                                 <div class="product-dot d-inline-block float-right pr-20">
                                     <span class="darkblue-bg"></span>
@@ -310,156 +310,9 @@
                                 </div><!-- /product-dot -->
                             </div><!-- /single-product -->
                         </div><!-- /col -->
-                        <div class="col-xl-3  col-lg-3  col-md-4  col-sm-6 col-12 mb-40">
-                            <div class="single-product bg-white position-relative pb-30">
-                                <div class="single-product-img position-relative">
-                                    <a href="single-product.html"><img class="height100" src="../static/picture/home-product3.jpg" alt=""></a>
-                                    <div class="single-product-hover-img position-absolute">
-                                        <a href="single-product.html"><img class="height100" src="../static/picture/home-product-hover-3.jpg" alt=""></a>
-                                        <ul class="single-product-button d-flex position-absolute">
-                                            <li data-toggle="tooltip" data-selector="true" data-placement="bottom" title="Add to cart"><a href="#"><span class="icon-shopping-bag"></span></a></li>
-                                            <li data-toggle="tooltip" data-selector="true" data-placement="bottom" title="Organic Chair High black"><a href="#" data-toggle="modal" data-target="#product-modal"><span class="icon-eye"></span></a></li>
-                                            <li data-toggle="tooltip" data-selector="true" data-placement="bottom" title="Add to wishlist"><a href="#"><span class="icon-heart"></span></a></li>
-                                        </ul>
-                                    </div><!-- /single-product-hover-img -->
-                               </div><!-- /single-product-img -->
 
-                                <h5 class="product-name pt-20 pl-20"><a href="single-product.html">Organic Chair High black</a></h5>
-                                <div class="product-price pl-20">
-                                    <span class="black-color">$1,098.00</span>
-                                </div>
-                            </div><!-- /single-product -->
-                        </div><!-- /col -->
-                        <div class="col-xl-3  col-lg-3  col-md-4  col-sm-6 col-12 mb-40">
-                            <div class="single-product bg-white position-relative pb-30">
-                                <div class="single-product-img position-relative">
-                                    <a href="single-product.html"><img class="height100" src="../static/picture/home-product4.jpg" alt=""></a>
-                                    <div class="single-product-hover-img position-absolute">
-                                        <a href="single-product.html"><img class="height100" src="../static/picture/home-product-hover-4.jpg" alt=""></a>
-                                        <ul class="single-product-button d-flex position-absolute">
-                                            <li data-toggle="tooltip" data-selector="true" data-placement="bottom" title="Add to option"><a href="#"><span class="icon-shopping-bag"></span></a></li>
-                                            <li data-toggle="tooltip" data-selector="true" data-placement="bottom" title="Organic Chair High White"><a href="#" data-toggle="modal" data-target="#product-modal"><span class="icon-eye"></span></a></li>
-                                            <li data-toggle="tooltip" data-selector="true" data-placement="bottom" title="Add to wishlist"><a href="#"><span class="icon-heart"></span></a></li>
-                                        </ul>
-                                    </div><!-- /single-product-hover-img -->
-                               </div><!-- /single-product-img -->
-                                <h5 class="product-name pt-20 pl-20"><a href="single-product.html">Organic Chair High White</a></h5>
-                                <div class="product-price pl-20 d-inline-block">
-                                    <span class="black-color">$96.00</span>
-                                </div>
-                                <div class="product-dot d-inline-block float-right pr-20">
-                                    <span class="darkblue-bg"></span>
-                                    <span class="black-bg"></span>
-                                    <span class="yellow-bg"></span>
-                                </div><!-- /product-dot -->
-                            </div><!-- /single-product -->
-                        </div><!-- /col -->
-                        <div class="col-xl-3  col-lg-3  col-md-4  col-sm-6 col-12 mb-40">
-                            <div class="single-product bg-white position-relative pb-30">
-                                <div class="single-product-img position-relative">
-                                    <a href="single-product.html"><img class="height100" src="../static/picture/home-product5.jpg" alt=""></a>
-                                    <div class="single-product-hover-img position-absolute">
-                                        <a href="single-product.html"><img class="height100" src="../static/picture/home-product-hover-5.jpg" alt=""></a>
-                                        <ul class="single-product-button d-flex position-absolute">
-                                            <li data-toggle="tooltip" data-selector="true" data-placement="bottom" title="Add to option"><a href="#"><span class="icon-shopping-bag"></span></a></li>
-                                            <li data-toggle="tooltip" data-selector="true" data-placement="bottom" title="Bottle Grinder with Steel Lid"><a href="#" data-toggle="modal" data-target="#product-modal"><span class="icon-eye"></span></a></li>
-                                            <li data-toggle="tooltip" data-selector="true" data-placement="bottom" title="Add to wishlist"><a href="#"><span class="icon-heart"></span></a></li>
-                                        </ul>
-                                    </div><!-- /single-product-hover-img -->
-                               </div><!-- /single-product-img -->
-
-                                <h5 class="product-name pt-20 pl-20"><a href="single-product.html">Bottle Grinder with Steel Lid</a></h5>
-                                <div class="product-price pl-20 d-inline-block">
-                                    <span class="black-color">$396.00</span>
-                                </div>
-                                <div class="product-dot d-inline-block float-right pr-20">
-                                    <span class="green-bg"></span>
-                                    <span class="black-bg"></span>
-                                    <span class="yellow-bg"></span>
-                                </div><!-- /product-dot -->
-                            </div><!-- /single-product -->
-                        </div><!-- /col -->
-                        <div class="col-xl-3  col-lg-3  col-md-4  col-sm-6 col-12 mb-40">
-                            <div class="single-product bg-white position-relative pb-30">
-                                <div class="single-product-img position-relative">
-                                    <a href="single-product.html"><img class="height100" src="../static/picture/home-product6.jpg" alt=""></a>
-                                    <div class="single-product-hover-img position-absolute">
-                                        <a href="single-product.html"><img class="height100" src="../static/picture/home-product-hover-6.jpg" alt=""></a>
-                                        <ul class="single-product-button d-flex position-absolute">
-                                            <li data-toggle="tooltip" data-selector="true" data-placement="bottom" title="Add to cart"><a href="#"><span class="icon-shopping-bag"></span></a></li>
-                                            <li data-toggle="tooltip" data-selector="true" data-placement="bottom" title="Antique Chinese Armchairs"><a href="#" data-toggle="modal" data-target="#product-modal"><span class="icon-eye"></span></a></li>
-                                            <li data-toggle="tooltip" data-selector="true" data-placement="bottom" title="Add to wishlist"><a href="#"><span class="icon-heart"></span></a></li>
-                                        </ul>
-                                    </div><!-- /single-product-hover-img -->
-                               </div><!-- /single-product-img -->
-
-                                <h5 class="product-name pt-20 pl-20"><a href="single-product.html">Antique Chinese Armchairs</a></h5>
-                                <div class="product-price pl-20">
-                                    <span class="black-color">$196.00</span>
-                                </div>
-                            </div><!-- /single-product -->
-                        </div><!-- /col -->
-                        <div class="col-xl-3  col-lg-3  col-md-4  col-sm-6 col-12 mb-40">
-                            <div class="single-product bg-white position-relative pb-30">
-                                <div class="single-product-img position-relative">
-                                    <a href="single-product.html"><img class="height100" src="../static/picture/home-product7.jpg" alt=""></a>
-                                    <div class="single-product-hover-img position-absolute">
-                                        <a href="single-product.html"><img class="height100" src="../static/picture/home-product-hover-7.jpg" alt=""></a>
-                                        <ul class="single-product-button d-flex position-absolute">
-                                            <li data-toggle="tooltip" data-selector="true" data-placement="bottom" title="Add to option"><a href="#"><span class="icon-shopping-bag"></span></a></li>
-                                            <li data-toggle="tooltip" data-selector="true" data-placement="bottom" title="Login / RegisterLiving Room Lighting"><a href="#" data-toggle="modal" data-target="#product-modal"><span class="icon-eye"></span></a></li>
-                                            <li data-toggle="tooltip" data-selector="true" data-placement="bottom" title="Add to wishlist"><a href="#"><span class="icon-heart"></span></a></li>
-                                        </ul>
-                                    </div><!-- /single-product-hover-img -->
-                               </div><!-- /single-product-img -->
-                                <h5 class="product-name pt-20 pl-20"><a href="single-product.html">Living Room Lighting</a></h5>
-                                <div class="product-price pl-20 d-inline-block">
-                                    <span class="black-color">$262.00</span>
-                                </div>
-                                <div class="product-dot d-inline-block float-right pr-20">
-                                    <span class="darkblue-bg"></span>
-                                    <span class="gray-bg"></span>
-                                    <span class="yellow-bg"></span>
-                                </div><!-- /product-dot -->
-                            </div><!-- /single-product -->
-                        </div><!-- /col -->
-                        <div class="col-xl-3  col-lg-3  col-md-4  col-sm-6 col-12 mb-40">
-                            <div class="single-product bg-white position-relative pb-30">
-                                <div class="single-product-img position-relative">
-                                    <a href="single-product.html"><img class="height100" src="../static/picture/home-product1.jpg" alt=""></a>
-                                    <div class="single-product-hover-img position-absolute">
-                                        <a href="single-product.html"><img class="height100" src="../static/picture/home-product-hover-1.jpg" alt=""></a>
-                                    </div><!-- /single-product-hover-img -->
-                                    <ul class="single-product-button d-flex position-absolute">
-                                        <li data-toggle="tooltip" data-selector="true" data-placement="bottom" title="Add to cart"><a href="#"><span class="icon-shopping-bag"></span></a></li>
-                                        <li data-toggle="tooltip" data-selector="true" data-placement="bottom" title="Organic Chair High back"><a href="#" data-toggle="modal" data-target="#product-modal"><span class="icon-eye"></span></a></li>
-                                        <li data-toggle="tooltip" data-selector="true" data-placement="bottom" title="Browse wishlist"><a href="#"><span class="icon-heart"></span></a></li>
-                                    </ul>
-
-                                    <div class="countdown-time d-flex border-gray position-absolute">
-                                        <div class="timer">
-                                            <div class="d-flex" data-countdown="2021/05/01"></div>
-                                        </div>
-                                    </div><!-- /countdown-time -->
-                               </div><!-- /single-product-img -->
-                                <h5 class="product-name pt-20 pl-20"><a href="single-product.html">Organic Chair High back</a></h5>
-                                <div class="product-price pl-20">
-                                    <span class="black-color"><ins>$1,139.40</ins></span>
-                                    <span class="old-price"><del>$1,366.00</del></span>
-                                </div>
-                                   <a href="shop.html" class="sale-tag position-absolute text-white text-uppercase d-inline-block">sale</a>
-                            </div><!-- /single-product -->
-                        </div><!-- /col -->
-                    </div><!-- /row -->
-                    <div class="row">
-                        <div class="col-xl-12  col-lg-12  col-md-12  col-sm-12 col-12">
-                            <div class="section-button text-center pt-10">
-                                <a href="shop.html" class="btn black-color border-black">All Product</a>
-                            </div><!-- /section-title -->
-                        </div><!-- /col -->
-                    </div><!-- /row -->
-                </div><!-- /container -->
-            </div>
+                       <% } %>
+                       <!--循环体结束  -->
             <!-- product-area-end  -->
 
             <!-- ====== product-offer-area-start ==================================== -->
@@ -473,7 +326,7 @@
                                     <span class="primary-color">Ends Today</span>
                                     <h3 class="text-white pt-10 pb-30">Elements Of Style</h3>
                                     <p class="text-white">USB Powered LED Lights – Use it Anywhere!</p>
-                                    <a href="single-product.html" class="btn2 text-white position-relative d-inline-block pt-45 pb-6">Explore Items</a>
+                                    <a href="/product" class="btn2 text-white position-relative d-inline-block pt-45 pb-6">Explore Items</a>
                                 </div><!-- /section-content -->
                             </div>
                         </div><!-- /col -->
@@ -484,7 +337,7 @@
                                     <span class="primary-color">Your Space</span>
                                     <h3 class="text-white pt-10 pb-30">Unique Life</h3>
                                     <p class="text-white">Big Sale September 8th To October 6th</p>
-                                    <a href="single-product.html" class="btn2 text-white position-relative d-inline-block pt-45 pb-6">Explore Items</a>
+                                    <a href="/product" class="btn2 text-white position-relative d-inline-block pt-45 pb-6">Explore Items</a>
                                 </div><!-- /section-content -->
                             </div>
                         </div><!-- /col -->

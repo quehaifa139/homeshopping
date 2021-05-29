@@ -3,7 +3,7 @@ var router = express.Router();
 
 //引入商家数据库
 var connection = require("./user");
-var formidable = require("formidable");
+
 
 
 /* GET home page. */

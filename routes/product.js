@@ -1,9 +1,13 @@
 var express = require('express');
 var router = express.Router();
-
-/* GET home page. */
+//引入数据库数据
+var connection = require('./user');
+/* GET product.html */
 router.get('/', function(req, res, next) {
-  res.render('product', { title: 'Express' });
+  var sql = 'select * from commodity';
+  connection.query(sql,(err,result) =>{
+  res.render('product', { title: 'Express' ,data:result});
+ })
 });
 
 module.exports = router;

@@ -1,29 +1,5 @@
 (function ($) {
     "use strict";
-    
-    //quantity input arrow
-    //---------------------------------------------------------------------------      
-    $('#quantity-input').inputarrow({
-        renderPrev: function(input) {
-            return $('<span class="custom-prev"><i class="fas fa-chevron-up"></i></span>').insertBefore(input);
-        },
-        renderNext: function(input) {
-            return $('<span class="custom-next"><i class="fas fa-chevron-down"></i></span>').insertAfter(input);
-        },
-        disabledClassName: 'enable'
-    });
-    //quantity input arrow
-    //---------------------------------------------------------------------------      
-    $('.quantity-input-2').inputarrow({
-        renderPrev: function(input) {
-            return $('<span class="custom-prev"><i class="fas fa-chevron-up"></i></span>').insertBefore(input);
-        },
-        renderNext: function(input) {
-            return $('<span class="custom-next"><i class="fas fa-chevron-down"></i></span>').insertAfter(input);
-        },
-        disabledClassName: 'enable'
-    });
-
 
     // preloader
     //---------------------------------------------------------------------------
@@ -585,4 +561,5 @@ $('.mean-nav ul:first-child').css('display','block');
 
 
 })(jQuery);	  
+
 
