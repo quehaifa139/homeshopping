@@ -24,6 +24,12 @@ var backgroundRouter = require('./routes/background');
 var addRouter = require('./routes/add');
 //修改路由
 var updateRouter = require('./routes/update');
+//office路由
+var officeRouter = require('./routes/office');
+//light路由
+var lightRouter = require('./routes/light');
+
+
 var app = express();
 
 // view engine setup
@@ -52,6 +58,10 @@ app.use('/background',backgroundRouter);
 app.use('/add',addRouter);
 //修改
 app.use('/update',updateRouter);
+//办公用品页面
+app.use('/office',officeRouter);
+//LED灯
+app.use('/light',lightRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -64,7 +74,7 @@ app.use(function(err, req, res, next) {
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
   // render the error page
-  console.log(err);
+ console.log(err);
   res.status(err.status || 500);
   res.render('error');
 });
