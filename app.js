@@ -28,7 +28,10 @@ var updateRouter = require('./routes/update');
 var officeRouter = require('./routes/office');
 //light路由
 var lightRouter = require('./routes/light');
-
+//购物车路由
+var shoppingCarRouter = require('./routes/shoppingCar');
+//收藏路由
+var collectRouter = require('./routes/collect');
 
 var app = express();
 
@@ -62,6 +65,11 @@ app.use('/update',updateRouter);
 app.use('/office',officeRouter);
 //LED灯
 app.use('/light',lightRouter);
+//购物车
+app.use('/shoppingCar',shoppingCarRouter);
+//我的收藏
+app.use('/collect',collectRouter);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
