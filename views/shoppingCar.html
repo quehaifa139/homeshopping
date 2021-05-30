@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>shoppingCar</title>
+</head>
+<style>
+    .nav_bar{
+        width: 1800px;
+        height: 170px;
+        border: black solid 1px;
+        border-left: none;
+        border-right: none;
+    }
+   .nav_bar input{
+    display: inline-block;
+    width: 240px;
+    height: 35px;
+    margin-top: 59px;
+    margin-left: 373px;
+   }
+   .nav_bar button{
+       width: 130px;
+       height: 40px;
+       background-color: cadetblue;
+       border-radius: 6px;
+       color: white;
+   } 
+   .nav_bar a{
+       position: absolute;
+       width: 130px;
+       height: 40px;
+       background-color: cadetblue;
+       border-radius: 6px;
+      display: inline-block;
+      text-align: center;
+      margin-left: 857px;
+      margin-top: -41px;
+      line-height: 40px;
+      text-decoration: none;
+      color: white;
+   } 
+.add{
+    margin-left: 110px;
+}
+.tab{
+    margin-top: 30px;
+}
+.com_id{
+    width: 120px;
+}
+.com_name{
+    width: 150px;
+}
+.type{
+    width: 160px;
+}
+.price{
+    width: 160px;
+}
+.descript{
+    width: 360px;
+}
+.anniu{
+    width: 220px;
+}
+.tab table tbody tr td a{
+       width: 90px;
+       height: 40px;
+       background-color: cadetblue;
+       border-radius: 6px;
+       display: inline-block;
+       text-align: center;
+       text-decoration: none;
+       line-height: 40px;
+       margin: 5px;
+       color: white;
+}
+.tab table{
+    text-align: center;
+}
+.inferior{
+    margin-top: 38px;
+    margin-left: 612px;
+}
+.inferior button{
+    width: 90px;
+    height: 40px;
+    margin: 10px;
+    background-color: cadetblue;
+    border-radius: 6px;
+    color: white;
+}
+</style>
+<body>
+<div>
+    <div class="tab">
+        <table border="2px" align="center" cellspacing="0px" cellpadding="10px">
+            <thead>
+               <caption>shoppingCar</caption>
+                <tr>
+                    <th class="com_name">c_name</th>
+                    <th class="type">color</th>
+                    <th class="price">unit-price</th>
+                    <th class="descript">number</th>
+                    <th class="sum">sum-price</th>
+                    <th class="anniu">buttton</th>
+                </tr>
+            </thead>
+            <tbody>
+               <% for(var o of data){  %>
+                <tr>
+                    <td><%=o.c_name %></td>
+                    <td><%=o.color %></td>
+                    <td><%=o.unit-price %></td>
+                    <td><%=o.number %></td>
+                    <td><%=o.sum-price %></td>
+                    <td>
+                        <a href="/shoppCar/del/<%= data[0].id %>" >delete</a>
+                    
+                    </td>
+                </tr>
+                <% } %>
+            </tbody>
+        </table>
+    </div>
+    
+
+</div>
+
+</body>
+</html>

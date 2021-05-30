@@ -426,11 +426,11 @@
                                <!-- 循环开始 -->
                                                 <% for(var o of data){ %>
                                                     <div class="col-xl-6  col-lg-6  col-md-4  col-sm-6 col-12 mb-40">
-                                                        <div class="single-product bg-white position-relative pb-30">
+                                                        <div class="single-product bg-white position-relative pb-30" style="width: 350px;height: 400px;display: inline-block;">
                                                             <div class="single-product-img position-relative">
-                                                                <a href="/product"><img class="height100" src="../static/picture/home-product2.jpg" alt=""></a>
+                                                                <a href="/product"><img class="height100" src="<%=o.images %>" alt=""></a>
                                                                 <div class="single-product-hover-img position-absolute">
-                                                                    <a href="/product"><img class="height100" src="../static/picture/home-product-hover-2.jpg" alt=""></a>
+                                                                    <a href="/product"><img class="height100" src="<%=o.images %>" alt=""></a>
                                                                     <ul class="single-product-button d-flex position-absolute">
                                                                         <li data-toggle="tooltip" data-selector="true" data-placement="bottom" title="Add to option"><a href="#"><span class="icon-shopping-bag"></span></a></li>
                                                                         <li data-toggle="tooltip" data-selector="true" data-placement="bottom" title="Utopia Towels Kitchen"><a href="#" data-toggle="modal" data-target="#product-modal"><span class="icon-eye"></span></a></li>

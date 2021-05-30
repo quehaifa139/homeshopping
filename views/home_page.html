@@ -258,16 +258,16 @@
                         <div class="col-xl-3  col-lg-3  col-md-4  col-sm-6 col-12 mb-40">
                             <div class="single-product bg-white position-relative pb-30">
                                 <div class="single-product-img position-relative">
-                                    <a href="/product"><img class="height100" src="../static/picture/home-product1.jpg" alt=""></a>
+                                    <a href="/product"><img class="height100" src="../static/picture/home-product1.jpg" ></a>
                                     <div class="single-product-hover-img position-absolute">
                                         <a href="/product"><img class="height100" src="../static/picture/home-product-hover-1.jpg" alt=""></a>
                                     </div><!-- /single-product-hover-img -->
                                     <ul class="single-product-button d-flex position-absolute">
-                                        <li data-toggle="tooltip" data-selector="true" data-placement="bottom" title="Add to cart"><a href="#"><span class="icon-shopping-bag"></span></a></li>
+                                        <li data-toggle="tooltip" data-selector="true" data-placement="bottom" title="Add to cart"><a href="/shoppingCar"><span class="icon-shopping-bag"></span></a></li>
                                         <li data-toggle="tooltip" data-selector="true" data-placement="bottom" title="Form Armchair Walnut Base">
                                             <a href="#" data-toggle="modal" data-target="#product-modal"><span class="icon-eye"></span></a>
                                         </li>
-                                        <li data-toggle="tooltip" data-selector="true" data-placement="bottom" title="Browse wishlist"><a href="#"><span class="icon-heart"></span></a>
+                                        <li data-toggle="tooltip" data-selector="true" data-placement="bottom" title="Browse wishlist"><a href="/collect"><span class="icon-heart"></span></a>
                                         </li>
                                     </ul>
                                     <div class="countdown-time d-flex border-gray position-absolute">
@@ -289,9 +289,9 @@
                         <div class="col-xl-3  col-lg-3  col-md-4  col-sm-6 col-12 mb-40">
                             <div class="single-product bg-white position-relative pb-30">
                                 <div class="single-product-img position-relative">
-                                    <a href="/product"><img class="height100" src="../static/picture/home-product2.jpg" alt=""></a>
+                                    <a href="/product"><img class="height100" src="<%=o.images %>" name="images"></a>
                                     <div class="single-product-hover-img position-absolute">
-                                        <a href="/product"><img class="height100" src="../static/picture/home-product-hover-2.jpg" alt=""></a>
+                                        <a href="/product"><img class="height100" src="<%=o.images %>" alt=""></a>
                                         <ul class="single-product-button d-flex position-absolute">
                                             <li data-toggle="tooltip" data-selector="true" data-placement="bottom" title="Add to option"><a href=""><span class="icon-shopping-bag"></span></a></li>
                                             <li data-toggle="tooltip" data-selector="true" data-placement="bottom" title="Utopia Towels Kitchen"><a href="" data-toggle="modal" data-target="#product-modal"><span class="icon-eye"></span></a></li>
@@ -299,9 +299,9 @@
                                         </ul>
                                     </div><!-- /single-product-hover-img -->
                                </div><!-- /single-product-img -->
-                                <h5 class="product-name pt-20 pl-20"><a href="/product"><%=o.com_name %></a></h5>
+                                <h5 class="product-name pt-20 pl-20"><a href="/product" name="com_name"><%=o.com_name %></a></h5>
                                 <div class="product-price pl-20 d-inline-block">
-                                    <span class="black-color"><%=o.price %></span>
+                                    <span class="black-color" name="price"><%=o.price %></span>
                                 </div>
                                 <div class="product-dot d-inline-block float-right pr-20">
                                     <span class="darkblue-bg"></span>
