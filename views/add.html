@@ -3,15 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <title>新增页面</title>
+    <style>
+        body form{
+            width: 500px;
+            height: 400px;
+           background-image: url(/images/14.jpg);
+           margin-left: 340px;
+           margin-top: 40px;
+        }
+        body form label{
+            margin-left: 60px;
+         
+        }
+        body form input{
+            height: 28px;
+            width: 240px;
+            margin: 10px;
+            border-radius: 6px;
+        }
+        .sub{
+            width: 100px;
+            height: 30px;
+            background-color: lightskyblue;
+            margin-top: 61px;
+            margin-left: 110px;
+        }
+        body form a{
+            display: inline-block;
+            width: 100px;
+            height: 30px;
+            background-color: lightskyblue;
+            margin-top: 61px;
+            margin-left: 65px;
+            border-radius: 6px;
+            text-decoration: none;
+            color: black;
+            text-align: center;
+            line-height: 30px;
+        }
+    </style>
 </head>
 <body>
 <form action="/add" method="post">
-    com_id：<input type="text" name="com_id"><br>
-    com_name：<input type="text" name="com_name"><br>
-    c_type：<input type="text" name="c_type"><br>
-    price：<input type="text" name="price"><br>
-    descript：<input type="text" name="descript"><br>
-    <input type="submit" value="提交">
+     <label>com_id：</label> <input type="text" name="com_id"><br>
+     <label>com_name：</label><input type="text" name="com_name"><br>
+     <label> c_type：</label><input type="text" name="c_type"><br>
+     <label>price：</label><input type="text" name="price"><br>
+     <label> descript：</label><input type="text" name="descript"><br>
+    <input type="submit" value="submit" class="sub">
+     <a href="/background">cancel</a>
 </form>
 </body>
 </html>

@@ -78,22 +78,20 @@
 			document.getElementById("password1").onchange = validatePassword;
 			document.getElementById("password2").onchange = validatePassword;
 		}
-
-		function validatePassword() {
-			var pass2 = document.getElementById("password2").value;
-			var pass1 = document.getElementById("password1").value;
-			if (pass1 != pass2)
-				document.getElementById("password2").setCustomValidity("Passwords Don't Match");
-			else
-				document.getElementById("password2").setCustomValidity('');
-			//empty string means no validation error
-		}
 	</script>
 	<!-- //password-script -->
  <script>
      $("#register").click(function(){
-		console.log($("#username").val());
-		$.ajax({
+		var name = $("#username").val();
+		var email = $("#uemail").val();
+		var pass1 = $("#password1").val();
+		var pass2 = $("#password2").val();
+		if(name.length == 0 || email.length == 0 || pass1.length == 0 || pass2.length == 0){
+			alert("输入内容不能为空")
+		}else if(pass1 != pass2){
+            alert("前后密码不一致,请重新输入")
+		}else{
+            $.ajax({
 			type:"post",
 			url :"/register",
 			data:{"username":$("#username").val(),"password":$("#password1").val()},
@@ -104,6 +102,8 @@
 				}
 			}
 		})
+		}
+		
 	})
  </script>
 </body>
