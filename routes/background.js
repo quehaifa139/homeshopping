@@ -22,7 +22,6 @@ router.post("/",function(req,res,next){
     if(id){
         sql += " where com_id = '"+ id +"'"  
     }
-    sql.replace("and","where");
     connection.query(sql,function(err,rows){
         if(err){
             res.send("查询失败: "+err);

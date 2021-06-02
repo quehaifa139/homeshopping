@@ -15,20 +15,16 @@ router.get('/', function(req, res, next) {
 router.post("/",function(req,res){
     var name = req.body.name;
     var password = req.body.password;
-    var query = 'select name,password,mer_id from merchant where name ="'+name+'" and password = "'+password+'"';
+    var mer_id = req.body.mer_id;
+    var query = 'select name,password,mer_id from merchant where name ="'+name+'" and password = "'+password+'"and mer_id = "'+mer_id+'"';
     connection.query(query,function(err,rows){
         if(err){
             console.log(err);
-            return;
-        }console.log(rows[0]);
-        if(!rows[0]){
-           return res.json({"status":-1});
-        }else{
-            res.json({"status":1});
-        }
-    })
-    res.end;
+   }else{
+       res.render('merlogin',{datas:rows});
+   }   
+        
 })
-
+})
 
 module.exports = router;

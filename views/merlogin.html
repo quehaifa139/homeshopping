@@ -1,94 +1,304 @@
 
-<!--
-Author: W3layouts
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="zxx">
 <head>
-<title>商家登录注册</title>
-<link href="../merchant/css/font-awesome.css" rel="stylesheet"> 
-<!-- //font-awesome icons -->
-<link href="../merchant/css/style.css" rel="stylesheet" type="text/css" media="all" />
-<script src="../merchant/js/jquery-2.1.4.min.js"></script>
-    <script type="text/javascript">
-        $(function () {
-
-		$('.hub-slider-slides ul').hubSlider({
-			selector: $('li'),
-			button: {
-				next: $('.hub-slider-arrow_next'),
-				prev: $('.hub-slider-arrow_prev')
-			},
-			transition: '0.7s',
-			startOffset: 30,
-			auto: true,
-			time: 2 // secondly
-		});
-
-        })
-    </script>
+    <title>商家登录页面</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+    html {
+        scroll-behavior: smooth;
+    }
+    
+    body,
+    html {
+        margin: 0;
+        padding: 0;
+        color: #585858;
+    }
+    .sub{
+        height: 40px;
+        margin-top: 20px;
+    }
+    .sub input{
+        background-color: crimson;
+        height: 50px;
+        line-height: 40px;
+        color: white;
+        font-size: 20px;
+        border-radius: 10px;
+    }
+    * {
+        box-sizing: border-box;
+        font-family: 'Noto Sans JP', sans-serif;
+    }
+    .login-agileits-top p{
+         color: white;
+    }
+    .login-agileits-top input{
+        width: 320px;
+        height: 46px;
+        border-radius: 10px;
+    }
+    .wrapper {
+        width: 100%;
+        padding-right: 15px;
+        padding-left: 15px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+    
+    .d-grid {
+        display: grid;
+    }
+    
+    button,
+    input,
+    select {
+        -webkit-appearance: none;
+        outline: none;
+    }
+    
+    button,
+    .btn,
+    select {
+        cursor: pointer;
+    }
+    
+    a {
+        text-decoration: none;
+    }
+    
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    ul,
+    ol {
+        margin: 0;
+        padding: 0;
+    }
+    
+    body {
+        background: #f1f1f1;
+        margin: 0;
+        padding: 0;
+    }
+    
+    form,
+    fieldset {
+        border: 0;
+        padding: 0;
+        margin: 0;
+    }
+    
+    body a:hover {
+        text-decoration: none;
+    }
+    
+    .clearfix {
+        clear: both;
+    }
+    
+    body {
+        font-family: 'Noto Sans JP', sans-serif;
+    }
+    .main {
+        background: url(/images/bg.jpg) no-repeat bottom;
+        background-size: cover;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        -ms-background-size: cover;
+        min-height: 100vh;
+        padding: 2em 0;
+        position: relative;
+        z-index: 1;
+        justify-content: center;
+        display: grid;
+        align-items: center;
+    }
+    .main:before {
+        position: absolute;
+        content:'';
+        top:0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background: rgba(0, 0, 0, 0.6);
+        z-index: -1;
+    }
+    .text-center {
+        text-align: center;
+    }
+    
+    .content-w3ls {
+        margin: 2em auto;
+        padding: 2em 2em;
+    }
+    .content-w3ls img{
+        margin-bottom: 2em;
+        border-radius: 50%;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -o-border-radius: 50%;
+        border: 4px solid rgb(255 255 255 / 9%);
+        display: inline-block;
+        width: 64px;
+        height: 64px;
+        background: #fff;
+        border-radius: 50%;
+        padding: 14px;
+    }
+    .logo h1 a {
+        font-size: 42px;
+        color: #fff;
+        text-transform: capitalize;
+        font-weight: 700;
+    }
+    .wthree-field {
+        margin-bottom:14px;
+    }
+    
+    ::-webkit-input-placeholder { 
+        color: #999;
+      }
+      
+      :-ms-input-placeholder { 
+        color:  #999;
+      }
+      
+      ::placeholder {
+        color: #999;
+      }
+    
+    .wthree-field button.btn {
+        background: #EA4C89;
+        border: none;
+        color: #fff;
+        padding: 14px 14px;
+        text-transform: uppercase;
+        font-family: 'Noto Sans JP', sans-serif;
+        font-size: 16px;
+        width:100%;
+        letter-spacing:1px;
+        outline: none;
+        cursor: pointer;
+        transition: 0.5s all;
+        -webkit-transition: 0.5s all;
+        -moz-transition: 0.5s all;
+        -o-transition: 0.5s all;
+        -ms-transition: 0.5s all;
+        border-radius: 35px;
+        -webkit-border-radius: 35px;
+        -moz-border-radius: 35px;
+        -ms-border-radius: 35px;
+        -o-border-radius: 35px;
+    
+    }
+    .wthree-field button.btn:hover {
+        background:#de3d7b;
+    }
+    .login-bottom {
+        margin-top:3em;
+    }
+    .login-bottom a {
+        font-size: 16px;
+        color: #fff;
+        font-weight: normal;
+        letter-spacing: 1px;
+        padding: 0 5px;
+        text-transform: capitalize;
+    }
+    
+    .copyright {
+        padding: 0 20px;
+    }
+    .copyright p {
+    
+        color: #fff;
+        font-size: 16px;
+        line-height: 26px;
+        text-align: center;
+        letter-spacing: 1px;
+    
+    }
+    .copyright p a {
+        color: #fff;
+    }
+    .copyright p a:hover,.login-bottom a:hover {
+        color:#EA4C89;
+    }
+   
+    </style>
+   
 </head>
 <body>
-<!-- 登录部分-->
-<div class="login-form login-form-left"> 
-    <div class="agile-row">
-        <h2>Sign In</h2> 
-        <div class="login-agileits-top"> 	
-                <p>User Name </p>
-                <input type="text" id="name" name="name"/>
-                <p>Password</p>
-                <input type="password" id="password" name="password"/>  
-                <p>mer_id </p>
-                <input type="text" id="mer_id" name="mer_id"/>  
-                <label class="anim">
-                <input type="checkbox" class="checkbox">
-                <span> Remember me ?</span> 
-                </label>   
-                <input type="submit" value="Sign In" id="login"> 
-            
-        </div> 
-        <div class="footer-social-grids">
-            <p>OR</p>
-            <div class="footer-social-top">
-                <div class="social-grid">
-                    <a href="#"><i class="fa fa-facebook"></i></a>
-                </div>
-                <div class="social-grid">
-                    <a href="#"><i class="fa fa-twitter"></i></a>
-                </div>
-                <div class="social-grid">
-                    <a href="#"><i class="fa fa-rss"></i></a>
-                </div>
-                <div class="clear"> </div>
-            </div>
+
+    <section class="main">
+        <div class="logo text-center">
+            <h1> <a href="index.html"> Universe Sign In Form</a></h1>
         </div>
-        <div class="login-agileits-bottom"> 
-            <h6><a href="#">Forgot password?</a></h6>
-        </div> 
-    </div>  
-</div> 
-<script type="text/javascript" src="../merchant/js/hubslider.js"></script>
+        <div class="content-w3ls text-center">
+            <img src="/images/admin.png" alt="" class="img-responsive">
+            <form action="/merlogin" method="post">
+                <div class="login-agileits-top"> 	
+                    <p>User Name </p>
+                    <input type="text" id="name" name="name"/>
+                    <p>Password</p>
+                    <input type="password" id="password" name="password"/>  
+                    <p>mer_id </p>
+                    <input type="text" id="mer_id" name="mer_id"/>
+                    <div class="sub">   
+                    <input type="submit" value="Sign In" id="login"> 
+                    </div> 
+            </div> 
+                <div class="login-bottom">
+                    <a href="/merchant" class="">Create An Account</a>
+                </div>
+            </form>
+        </div>
+        
+    </section>
+
+</body>
+<script src="../static/js/jquery-1.12.4.min.js"></script>
 <script>
     $("#login").click(function(){
-		$.ajax({
+        var name = $("#name").val();
+        var password = $("#password").val();
+        var id = $("#mer_id").val();
+        if(name.length ==0){
+            alert("请先输入您的商家名");
+        }else if(password.length ==0){
+            alert("请输入您的密码");
+        }else if(id.length ==0){
+            alert("请先输入您的商家id");
+        }else{
+            $.ajax({
 			type:"post",
 			url :"/merlogin",
-			data:{"name":$("#name").val(),"password":$("#password").val()},
+			data:{name,password,id},
 			success:function(data){
                 console.log(status)
 				if(data.status==1){
 					alert("登录成功");
 					window.location.href = "/background"
 				}else{
-					alert("用户名或密码错误，登录失败，请重新登录")
-				}
+					alert("用户名或密码或商家编号错误，登录失败，请重新登录")
+                }
+            
 			}
 		})
+         }
+		
 	})
 </script>
 
-</body>
+
 </html>

@@ -63,7 +63,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 											<span> Remember me ?</span> 
 										</label>   
 										<P><button type="submit" id="enter"  style="width: 400PX;height: 40PX;background-color: red;">SIGN UP</button></P>
-        
+                                        <p style="margin-left: 140px"><a href="/merlogin" style="color: white;font-size: 20px;">Or Sign In Now</a></p>
 								</div>  
 							</div>  
 						</div> 
@@ -79,10 +79,28 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
     //注册时点击事件
      $("#enter").click(function(){
-		$.ajax({
+		var name = $("#name-one").val();
+		var pass1 = $("#password-one").val();
+		var pass2 = $("#password-two").val();
+		var merid = $("#mer_id-one").val();
+		var phone = $("#phonenumber").val();
+		if(name.length == 0 ){
+			alert("输入内容不能为空")
+		}else if(pass1.length ==0){
+            alert("请输入您的密码")
+		}else if(pass2.length ==0){
+			alert("请确认密码")
+		}else if(merid.length ==0){
+			alert("请输入您的商家编号")
+		}else if(phone.length ==0){
+			alert("请输入您的电话号码")
+		}else if(pass1 != pass2){
+			alert("你的密码两次输入不一致")
+		}else{
+			$.ajax({
 			type:"post",
 			url :"/merchant",
-			data:{"name":$("#name-one").val(),"password":$("#password-one").val(),"mer_id":$("#mer_id-one").val(),"phonenumber":$("#phonenumber").val()},
+			data:{name,pass1,merid,phone},
             success:function(data){
 				if(data.status==1){
 					alert("注册成功");
@@ -92,6 +110,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         
 		})
         
+		}
+		
 	})
 </script>
 </div>
