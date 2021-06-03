@@ -246,7 +246,6 @@
         </div>
         <div class="content-w3ls text-center">
             <img src="/images/admin.png" alt="" class="img-responsive">
-            <form action="/merlogin" method="post">
                 <div class="login-agileits-top"> 	
                     <p>User Name </p>
                     <input type="text" id="name" name="name"/>
@@ -261,7 +260,7 @@
                 <div class="login-bottom">
                     <a href="/merchant" class="">Create An Account</a>
                 </div>
-            </form>
+          
         </div>
         
     </section>
@@ -283,9 +282,9 @@
             $.ajax({
 			type:"post",
 			url :"/merlogin",
-			data:{name,password,id},
+			data:{"name":name,"password":password,"mer_id":id},
 			success:function(data){
-                console.log(status)
+              
 				if(data.status==1){
 					alert("登录成功");
 					window.location.href = "/background"

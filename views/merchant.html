@@ -49,15 +49,15 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								<div class="login-agileits-top"> 	
 		
 										<p>Merchant Name </p>
-										<input type="text" id="name-one" name="name-one" />
+										<input type="text" id="name_one" name="name_one" />
 										<p>Password</p>
-										<input type="password" id="password-one" name="password" /> 
+										<input type="password" id="password_one" name="password_one" /> 
 										<p>Confirm Password</p>
-										<input type="password" id="password-two" name="password" /> 
+										<input type="password" id="password_two" name="password" /> 
 										<p>Merchant id</p>
 										<input type="text" id="mer_id-one" name="mer_id"/>
                                         <p>phonenumber</p>
-										<input type="text" id="phonenumber"/>
+										<input type="text" id="phonenumber" name="phonenumber"/>
 										<label class="anim">
 											<input type="checkbox" class="checkbox">
 											<span> Remember me ?</span> 
@@ -79,9 +79,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
     //注册时点击事件
      $("#enter").click(function(){
-		var name = $("#name-one").val();
-		var pass1 = $("#password-one").val();
-		var pass2 = $("#password-two").val();
+		var name = $("#name_one").val();
+		var pass1 = $("#password_one").val();
+		var pass2 = $("#password_two").val();
 		var merid = $("#mer_id-one").val();
 		var phone = $("#phonenumber").val();
 		if(name.length == 0 ){
@@ -100,7 +100,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			$.ajax({
 			type:"post",
 			url :"/merchant",
-			data:{name,pass1,merid,phone},
+			data:{"name":name,"password":pass1,"mer_id":merid,"phone":phone},
             success:function(data){
 				if(data.status==1){
 					alert("注册成功");

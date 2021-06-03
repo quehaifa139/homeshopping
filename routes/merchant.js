@@ -17,7 +17,7 @@ router.post("/",function(req,res){
     var name = req.body.name;
     var password = req.body.password;
     var mer_id = req.body.mer_id;
-    var phonenumber = req.body.phonenumber;
+    var phonenumber = req.body.phone;
     var a_query = 'insert into merchant values("'+name+'","'+password+'","'+mer_id+'","'+phonenumber+'")'
     connection.query(a_query,function(err,rows){
         if(err){

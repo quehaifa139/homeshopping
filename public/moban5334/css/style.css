@@ -193,6 +193,7 @@ button:hover {
 }
 
 .content-wthree {
+    width: 750px;
     flex-basis: 60%;
     -webkit-flex-basis: 60%;
     box-sizing: border-box;

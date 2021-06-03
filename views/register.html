@@ -1,73 +1,58 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="zxx">
 
 <head>
-	<title>现在注册</title>
-	<!-- Meta tag Keywords -->
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta charset="UTF-8" />
-	<meta name="keywords" content="Full Screen Enroll Form Responsive Widget,Login form widgets, Sign up Web forms , Login signup Responsive web form,Flat Pricing table,Flat Drop downs,Registration Forms,News letter Forms,Elements" />
-	</script>
-	<!-- Meta tag Keywords -->
+    <title>注册页面</title>
+    <!-- Meta tag Keywords -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8" />
+    <meta name="keywords"
+        content="Hotair Login Form Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+    <!-- //Meta tag Keywords -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <!--/Style-CSS -->
+    <link rel="stylesheet" href="../moban5334/css/style.css" type="text/css" media="all" />
+    <!--//Style-CSS -->
 
-	<!-- css files -->
-	<link rel="stylesheet" href="../regist/css/style.css" type="text/css" media="all" />
-	<!-- Style-CSS -->
-	<link rel="stylesheet" href="../regist/css/fontawesome-all.css">
-	<!-- Font-Awesome-Icons-CSS -->
-	<!-- //css files -->
+    <link rel="stylesheet" href="../moban5334/css/font-awesome.min.css" type="text/css" media="all">
+
 </head>
 
 <body>
-		<div class="right-form-agile" style="margin-top: 20px;margin-left: 447px;">
-			<!-- content -->
-			<div class="sub-main-w3">
-				<h3>Signup Now</h3>
-				<h5>Creating an account is free..</h5>
-				<p>and won't take longer than a couple os seconds</p>
-			
-					<div class="form-style-agile">
-						<label>Your Name</label>
-						<div class="pom-agile">
-							<span class="fas fa-user"></span>
-							<input placeholder="Your Name" name="Name" type="text" required="" id="username">
-						</div>
-					</div>
-					<div class="form-style-agile">
-						<label>Email</label>
-						<div class="pom-agile">
-							<span class="fas fa-envelope-open"></span>
-							<input placeholder="Email" name="Email" type="email" required="" id="uemail">
-						</div>
-					</div>
-					<div class="form-style-agile">
-						<label>Password</label>
-						<div class="pom-agile">
-							<span class="fas fa-key"></span>
-							<input placeholder="Password" name="Password" type="password" id="password1" required="">
-						</div>
-					</div>
-					<div class="form-style-agile">
-						<label>Confirm Password</label>
-						<div class="pom-agile">
-							<span class="fas fa-key"></span>
-							<input placeholder="Confirm Password" name="Confirm Password" type="password" id="password2" required="">
-						</div>
-					</div>
-					<div class="sub-agile">
-						<input type="checkbox" id="brand1" value="">
-						<label for="brand1">
-							<span></span>I Accept to the Terms & Conditions</label>
-					</div>
-					<input type="submit" value="Submit" id="register">
-				
-				<!-- social icons -->
-				<div class="w3ls-social">
-					<a href="/login">or Login with</a>
-					
-				</div>
-				<!-- //social icons -->
-			</div>
+		<div class="right-form-agile" style="    margin-top: 6px;margin-left: -19px;">
+			<!-- <form action="/register" method="GET"> -->
+				<!-- form section start -->
+				<section class="w3l-hotair-form">
+					<h1>Hotair Sign Up Form</h1>
+					<div class="container">
+						<!-- /form -->
+						<div class="workinghny-form-grid">
+							<div class="main-hotair">
+								<div class="alert-close">
+								   <a href="/" class="fa fa-close"></a>
+								</div>
+								<div class="content-wthree">
+									<h2>Sign Up</h2>
+									<p>Create  Your Account</p>
+									<!-- <form action="/register" method="post"> -->
+										<input type="text" class="text"  placeholder="User Name"  id="username">
+										<input type="text" id="uemail" placeholder="User Email">
+										<input type="password"  name="password" placeholder="User Password" id="password1">
+										<input type="password" name="password2" id="password2"  placeholder="Confim Your Password">
+										<button class="btn" type="submit" id="register">Sign Up</button>
+									<!-- </form> -->
+                                   <br>
+								   <p style="margin: 15px;"><a href="/Login">Having a count? Login in</a></p>
+									<p style="margin: 20px;"><a href="/merchant">OR LOGIN WITH MERCHANT</a></p>
+								</div>
+								<div class="w3l_form align-self">
+							
+								</div>
+							</div>
+							</div>
+							</div>
+							</section>
+							<!-- </form> -->
 		</div>
 	</div>
 	<!-- //content -->
@@ -80,10 +65,17 @@
 		var email = $("#uemail").val();
 		var pass1 = $("#password1").val();
 		var pass2 = $("#password2").val();
-		if(name.length == 0 || email.length == 0 || pass1.length == 0 || pass2.length == 0){
-			alert("输入内容不能为空")
-		}else if(pass1 != pass2){
-            alert("前后密码不一致,请重新输入")
+		if(name.length == 0 ){
+			alert("请先输入您的用户名");
+		
+		}else if(email.length == 0){
+            alert("请先输入您的邮箱地址")
+		}else if(pass1.length == 0){
+			alert("请输入您的密码")
+		}else if(pass2.length == 0){
+			alert("请确认您的密码")
+		}else if(pass2 != pass1){
+            alert("两次密码不一致，请重新输入")
 		}else{
             $.ajax({
 			type:"post",
@@ -92,7 +84,7 @@
 			success:function(data){
 				if(data.status==1){
 					alert("注册成功");
-                    window.location = "/"
+                    window.location = "/login"
 				}
 			}
 		})
