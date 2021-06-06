@@ -17,10 +17,10 @@ router.get('/', function(req, res, next) {
 
 //实行查询操作
 router.post("/",function(req,res,next){
-    var id = req.body.com_id;
+    var search = req.body.search;
     var sql = "select * from commodity";
-    if(id){
-        sql += " where com_id = '"+ id +"'"  
+    if(search){
+         
     }
     connection.query(sql,function(err,rows){
         if(err){

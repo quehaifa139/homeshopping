@@ -35,8 +35,8 @@
 									<h2>Sign Up</h2>
 									<p>Create  Your Account</p>
 									<!-- <form action="/register" method="post"> -->
-										<input type="text" class="text"  placeholder="User Name"  id="username">
-										<input type="text" id="uemail" placeholder="User Email">
+										<input type="text" class="uname"  placeholder="User Name"  id="username">
+										<input type="text" id="uemail" placeholder="User Email" required pattern="">
 										<input type="password"  name="password" placeholder="User Password" id="password1">
 										<input type="password" name="password2" id="password2"  placeholder="Confim Your Password">
 										<button class="btn" type="submit" id="register">Sign Up</button>
@@ -65,22 +65,29 @@
 		var email = $("#uemail").val();
 		var pass1 = $("#password1").val();
 		var pass2 = $("#password2").val();
-		if(name.length == 0 ){
-			alert("请先输入您的用户名");
-		
-		}else if(email.length == 0){
-            alert("请先输入您的邮箱地址")
-		}else if(pass1.length == 0){
+		if(name.length == 0){
+			alert("请输入您的用户名")
+		}
+		if(email.length == 0){
+			alert("请输入正确的邮箱地址")
+		}
+		if(pass1.length == 0){
 			alert("请输入您的密码")
-		}else if(pass2.length == 0){
+		}
+		if(pass2.length == 0){
 			alert("请确认您的密码")
-		}else if(pass2 != pass1){
-            alert("两次密码不一致，请重新输入")
+		}
+		if(pass2 != pass1){
+			alert("两次密码不一致")
+		}else if(name.length < 3 || name.length > 10){
+			alert("用户名长度有误，请输入长度为3-10个字符的用户名")
+		}else if(pass1.length < 6 || pass1.length > 12){
+			alert("密码输入有误，请输入长度为6-12的字符加数字的组合密码")
 		}else{
-            $.ajax({
+			$.ajax({
 			type:"post",
 			url :"/register",
-			data:{"username":$("#username").val(),"password":$("#password1").val()},
+			data:{"username":name,"password":pass1},
 			success:function(data){
 				if(data.status==1){
 					alert("注册成功");
@@ -89,9 +96,8 @@
 			}
 		})
 		}
-		
 	})
- </script>
+</script>
 </body>
 
 </html>

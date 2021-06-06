@@ -288,8 +288,12 @@
 				if(data.status==1){
 					alert("登录成功");
 					window.location.href = "/background"
-				}else{
+				}else if(data.status == -1){
+                    alert("该商家尚不存在，请先注册");
+                    window.location.href="/merlogin";
+                }else{
 					alert("用户名或密码或商家编号错误，登录失败，请重新登录")
+
                 }
             
 			}

@@ -16,14 +16,18 @@ router.post("/",function(req,res){
     var mer_id = req.body.mer_id;
     var sql = 'select name,password,mer_id from merchant where name ="'+name+'" and password = "'+password+'"and mer_id = "'+mer_id+'"';
     connection.query(sql,function(err,rows){
-        if(err){
-            console.log(err);
-   }else{
-       res.json({"status":1});
-       res.render('merlogin',{datas:rows});
-   }   
+      if(err){
+          console.log(err);
+      }
+      
+        if(!rows[0]){
+            return res.json({"status":-1});
+         }else{
+             res.json({"status":1});
+         }
         
 })
+res.end;
 })
 
 module.exports = router;
