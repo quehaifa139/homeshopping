@@ -7,13 +7,11 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="apple-touch-icon" href="icon.png">
-        <!-- Place favicon.ico in the root directory -->
-        <link rel="shortcut icon" href="../static/images/icon/favicons.png" type="image/x-icon">
+       
         <!-- All css here -->
         <link rel="stylesheet" href="../static/css/bootstrap.min.css">
         <link rel="stylesheet" href="../static/css/fontawesome-all.min.css">
         <link rel="stylesheet" href="../static/css/slick.css">
-
         <link rel="stylesheet" href="../static/css/nice-select.css">
         <link rel="stylesheet" href="../static/css/animate.css">
         <link rel="stylesheet" href="../static/css/meanmenu.css">
@@ -22,11 +20,10 @@
         <link rel="stylesheet" href="../static/css/default.css">
         <link rel="stylesheet" href="../static/css/style.css">
         <link rel="stylesheet" href="../static/css/responsive.css">
+    
     </head>
     <body>
-        <!--[if lte IE 9]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-        <![endif]-->
+        
         <!--  ====== preloader=============================================  -->
         <div id="preloader"></div>
 
@@ -289,9 +286,9 @@
                         <div class="col-xl-3  col-lg-3  col-md-4  col-sm-6 col-12 mb-40">
                             <div class="single-product bg-white position-relative pb-30">
                                 <div class="single-product-img position-relative">
-                                    <a href="/product"><img class="height100" src="<%=o.images %>" name="images"></a>
+                                    <a href="/product"><img class="height100" src="<%=o.image %>" name="image"></a>
                                     <div class="single-product-hover-img position-absolute">
-                                        <a href="/product"><img class="height100" src="<%=o.images %>" alt=""></a>
+                                        <a href="/product"><img class="height100" src="<%=o.image %>" alt=""></a>
                                         <ul class="single-product-button d-flex position-absolute">
                                             <li data-toggle="tooltip" data-selector="true" data-placement="bottom" title="Add to option"><a href=""><span class="icon-shopping-bag"></span></a></li>
                                             <li data-toggle="tooltip" data-selector="true" data-placement="bottom" title="Utopia Towels Kitchen"><a href="" data-toggle="modal" data-target="#product-modal"><span class="icon-eye"></span></a></li>
@@ -299,6 +296,7 @@
                                         </ul>
                                     </div><!-- /single-product-hover-img -->
                                </div><!-- /single-product-img -->
+                        
                                 <h5 class="product-name pt-20 pl-20"><a href="/product" name="com_name"><%=o.com_name %></a></h5>
                                 <div class="product-price pl-20 d-inline-block">
                                     <span class="black-color" name="price"><%=o.price %></span>

@@ -1,15 +1,11 @@
-
 <!doctype html>
 <html class="no-js" lang="zxx">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>家居商城</title>
+        <title>Shop - Agota</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="apple-touch-icon" href="icon.png">
-        <!-- Place favicon.ico in the root directory -->
-        <link rel="shortcut icon" href="./images/icon/favicons.png" type="image/x-icon">
 
         <!-- All css here -->
         <link rel="stylesheet" href="../static/css/bootstrap.min.css">
@@ -23,12 +19,12 @@
         <link rel="stylesheet" href="../static/css/icomoon.css">
         <link rel="stylesheet" href="../static/css/default.css">
         <link rel="stylesheet" href="../static/css/style.css">
-        <link rel="stylesheet" href="../static/css/responsive.css">
+       <link rel="stylesheet" href="../static/css/responsive.css">
     </head>
     <body>
+
         <!--  ====== header-area-start=======================================  -->
         <header>
-            <form action="/shop" method="GET">
             <div id="header-sticky" class="header-area white-bg">
                 <div class="header position-absolute pl-35 pr-35">
                     <div class="container-fluid">
@@ -55,7 +51,7 @@
                             <div class="col-xl-3  col-lg-4 col-md-5 col-sm-5 col-4">
                                 <div class="header-right d-flex justify-content-end">
                                     <ul class="header-login d-none d-xl-block">
-                                        <li><a href="/register" data-toggle="tooltip" data-selector="true" data-placement="bottom" title="Login / Register">Login / register</a></li>
+                                        <li><a href="/login" data-toggle="tooltip" data-selector="true" data-placement="bottom" title="Login">Login</a><a href="/register">/ register</a></li>
                                     </ul>
                                     <ul class="header-search d-none d-xl-block">
                                        <li><a href="javascript:void(0);"><span class="icon-search"></span></a></li>
@@ -82,7 +78,21 @@
                 <div class="close-icon float-right pt-10">
                     <a href="javascript:void(0);"><span class="icon-clear"></span></a>
                 </div>
-                
+                <div class="header-search-content pt-110">
+                    <h4 class="pb-10 text-center">Searching</h4>
+                    <ul class="">
+                        <li><a class="active" href="/shop">All categories</a></li>
+                        <li><a href="/shop">Bedroom</a></li>
+                        <li><a href="/shop">Decor</a></li>
+                        <li><a href="/shop">Decoration</a></li>
+                        <li><a href="/shop">Kitchen</a></li>
+                        <li><a href="/shop">Lamp</a></li>
+                    </ul>
+                    <form action="#" class="position-relative pt-10 pb-15">
+                        <input type="text" placeholder="Search Products...">
+                        <a class="position-absolute" href="javascript:void(0)"><span class="icon-search"></span></a>
+                    </form>
+                </div>
                 <div class="mobile-menu"></div>
                 <div class="menu-login pt-50 pb-200">
                     <ul class="header-login d-flex justify-content-between border-bottom-gray">
@@ -97,6 +107,26 @@
             </div><!-- /side-mobile-menu -->
             <div class="body-overlay"></div>
             <!-- header search details start -->
+            <div class="header-search-details text-center white-bg pt-60 pl-230 pr-230">
+                <div class="close-icon float-right">
+                    <a href="javascript:void(0);"><span class="icon-clear"></span></a>
+                </div>
+                <div class="header-search-content pt-200 ml-150 mr-150">
+                    <h4 class="mb-25">Searching</h4>
+                    <ul class="d-flex justify-content-center">
+                        <li><a class="active" href="/shop">All categories</a></li>
+                        <li><a href="/shop">Bedroom</a></li>
+                        <li><a href="/shop">Decor</a></li>
+                        <li><a href="/shop">Decoration</a></li>
+                        <li><a href="/shop">Kitchen</a></li>
+                        <li><a href="/shop">Lamp</a></li>
+                    </ul>
+                    <form action="#" class="position-relative pt-10">
+                        <input type="text" placeholder="Search Products...">
+                        <a class="position-absolute" href="#"><span class="icon-search"></span></a>
+                    </form>
+                </div>
+            </div><!-- /extra-info -->
 
             <!-- header-shopping-cart-details start -->
             <div class="header-shopping-cart-details white-bg pt-50 pb-40 pl-50 pr-40">
@@ -135,7 +165,7 @@
             <!-- ====== shop-header-area-start=============================================== -->
             <div class="shop-header-area pt-110">
                 <div class="container-wrapper pl-15 pr-15 position-relative">
-                    <div class="row position-static">
+                    <div class="row position-../static">
                         <div class="col-xl-4  col-lg-4  col-md-3   d-none d-md-block">
                             <div class="shop-title pb-50">
                                 <h5 class="mb-0 mt-10">Showing all 12 results</h5>
@@ -146,7 +176,7 @@
                                 <span>Views:</span>
                                 <ul class="nav nav-tabs shop-product-tab border-bottom-0 pt-1" id="myTab" role="tablist">
                                     <li class="nav-item">
-                                    <a class="nav-link py-0 pr-1" id="col2-tab" data-toggle="tab" href="" role="tab" aria-controls="col2" aria-selected="true">
+                                    <a class="nav-link py-0 pr-1" id="col2-tab" data-toggle="tab" href="#col2" role="tab" aria-controls="col2" aria-selected="true">
                                         <img class="ser-icon" src="../static/picture/2.svg" alt="">
                                     </a>
                                     </li>
@@ -198,7 +228,7 @@
                                                         <li>
                                                             <div class="d-flex align-items-center mb-3">
                                                                 <input type="checkbox" class="option-input radio" name="example">
-                                                                <a href=""><span class="pl-15">Bedroom</span></a>
+                                                                <a href="#"><span class="pl-15">Bedroom</span></a>
                                                             </div>
                                                         </li>
                                                         <li>
@@ -371,131 +401,47 @@
                                             </div><!-- /col -->
                                         </div><!-- /row -->
                                     </div>
-                                </div><!-- /container -->
-                            </div><!-- /product-filter-details -->
-                        </div><!-- /col -->
-                    </div><!-- /row -->
-                </div><!-- /container -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <!-- shop-header-area-end -->
 
             <!-- ====== all-product-area-start ============================================ -->
             <div class="all-product-area pb-45">
                 <div class="container-wrapper pl-15 pr-15">
-                    <div class="row">
-                        <div class="col-xl-12  col-lg-  col-md-  col-sm- col-">
-                            <div class="tab-content" id="myTabContent">
-                                <div class="tab-pane fade" id="col2" role="tabpanel" aria-labelledby="col2">
-                                    <!-- ====== column-2-area-start================================ -->
-                                    <div id="col-2" class="Bestsellers Products-area">
-                                        <div class="container-wrapper pl-15 pr-15">
-                                            <div class="row">
-                                                <div class="col-xl-6  col-lg-6  col-md-4  col-sm-6 col-12 mb-40">
-                                                    <div class="single-product bg-white position-relative pb-30">
-                                                        <div class="single-product-img position-relative">
-                                                            <a href="/product"><img class="height100" src="../static/picture/home-product1.jpg" alt=""></a>
-                                                            <div class="single-product-hover-img position-absolute">
-                                                                <a href="/product"><img class="height100" src="../static/picture/home-product-hover-1.jpg" alt=""></a>
-                                                            </div><!-- /single-product-hover-img -->
-                                                            <ul class="single-product-button d-flex position-absolute">
-                                                                <li data-toggle="tooltip" data-selector="true" data-placement="bottom" title="Add to cart"><a href="#"><span class="icon-shopping-bag"></span></a></li>
-                                                                <li data-toggle="tooltip" data-selector="true" data-placement="bottom" title="Form Armchair Walnut Base">
-                                                                    <a href="#" data-toggle="modal" data-target="#product-modal"><span class="icon-eye"></span></a>
-                                                                </li>
-                                                                <li data-toggle="tooltip" data-selector="true" data-placement="bottom" title="Browse wishlist"><a href="#"><span class="icon-heart"></span></a>
-                                                                </li>
-                                                            </ul>
-                                                            <div class="countdown-time d-flex border-gray position-absolute">
-                                                                <div class="timer">
-                                                                    <div class="d-flex" data-countdown="2021/12/01"></div>
-                                                                </div>
-                                                            </div><!-- /countdown-time -->
-                                                        </div><!-- /single-product-img -->
-                                                        <h5 class="product-name pt-20 pl-20"><a href="/product">Form Armchair Walnut Base</a></h5>
-                                                        <div class="product-price pl-20">
-                                                            <span class="black-color"><ins>$799.00</ins></span>
-                                                            <span class="old-price"><del>$829.00</del></span>
-                                                        </div>
-                                                            <a href="#" class="sale-tag position-absolute text-white text-uppercase d-inline-block">sale</a>
-                                                    </div><!-- /single-product -->
-                                                </div><!-- /col -->
-                               <!-- 循环开始 -->
-                                                <% for(var o of data){ %>
-                                                    <div class="col-xl-6  col-lg-6  col-md-4  col-sm-6 col-12 mb-40">
-                                                        <div class="single-product bg-white position-relative pb-30" style="width: 350px;height: 400px;display: inline-block;">
-                                                            <div class="single-product-img position-relative">
-                                                                <a href="/product"><img class="height100" src="<%=o.images %>" alt=""></a>
-                                                                <div class="single-product-hover-img position-absolute">
-                                                                    <a href="/product"><img class="height100" src="<%=o.images %>" alt=""></a>
-                                                                    <ul class="single-product-button d-flex position-absolute">
-                                                                        <li data-toggle="tooltip" data-selector="true" data-placement="bottom" title="Add to option"><a href="#"><span class="icon-shopping-bag"></span></a></li>
-                                                                        <li data-toggle="tooltip" data-selector="true" data-placement="bottom" title="Utopia Towels Kitchen"><a href="#" data-toggle="modal" data-target="#product-modal"><span class="icon-eye"></span></a></li>
-                                                                        <li data-toggle="tooltip" data-selector="true" data-placement="bottom" title="Add to wishlist"><a href="#"><span class="icon-heart"></span></a></li>
-                                                                    </ul>
-                                                                </div><!-- /single-product-hover-img -->
-                                                            </div><!-- /single-product-img -->
-                                                            <h5 class="product-name pt-20 pl-20"><a href="/product"><%=o.com_name %></o></a></h5>
-                                                            <div class="product-price pl-20 d-inline-block">
-                                                                <span class="black-color"><%=o.price %></span>
-                                                            </div>
-                                                            <div class="product-dot d-inline-block float-right pr-20">
-                                                                <span class="darkblue-bg"></span>
-                                                                <span class="lower-blue-bg"></span>
-                                                                <span class="pink-bg"></span>
-                                                            </div><!-- /product-dot -->
-                                                        </div><!-- /single-product -->
-                                                    </div><!-- /col -->
-                                               <% } %>
-         <!-- 循环结束 -->
-                                <div class="col-xl-6  col-lg-6  col-md-6  col-sm-12 col-12">
-                                    <div class="product-modal-left pt-20">
-                                        <h4><a href="/product">Form Armchair Walnut Base</a></h4>
-                                        <div class="price pb-15"><span>$396.00</span> <span class="modal-old-price"> <del>$400 </del> </span> </div>
-                                        <div class="available">
-                                            <p> Availability: <span class="blue-color">In Stock</span></p>
-                                        </div>
-                                        <div class="sku pb-10"><p>Sku: <span class="blue-color">	0028KE21</span> </p></div>
-                                        <p>Typi non habent claritatem insitam, est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod legunt saepius.…</p>
-                                        <div class="quick-add-to-cart d-lg-flex align-items-center pt-20">
-                                            <div class="quantity mr-10 mb-20">Quantity :</div>
-                                            <div class="quantity-field position-relative d-inline-block pr-10 mb-20">
-                                                <input type="text" name="select1" value="0" class="quantity-input-arrow" id="quantity-input">
-                                            </div>
-                                            <a href="#" class="add-cart-btn">Add to cart</a>
-                                        </div><!-- /quick-add-to-cart -->
-                                        <div class="mega-product mb-20">
-                                            <p class="mb-1"><span>Categories:</span>
-                                                <a href="#">Bedroom,</a>
-                                                <a href="#">Kitchen</a>
-                                            </p>
-                                            <p class="mb-1"><span>Tags:</span>
-                                                <a href="#">Agota,</a>
-                                                <a href="#">Furniture,</a>
-                                                <a href="#">Living room,</a>
-                                                <a href="#">Table</a>
-                                            </p>
-                                        </div><!-- /mega-product -->
-                                        <div class="social-sharing-wrapper d-lg-flex align-items-center">
-                                            <span class="share mr-20 d-inline-block mb-20">Share this product:</span>
-                                            <ul class="social-sharing mb-20">
-                                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                                <li><a href="#"><i class="fab fa-pinterest-p"></i></a></li>
-                                                <li><a href="#"><i class="fab fa-google-plus"></i></a></li>
-                                                <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-                                            </ul><!-- /social-sharing -->
-                                        </div>
-                                    </div><!-- /product-modal-left -->
-                                </div><!-- /col -->
-                            </div><!-- /row -->
+                <div class="row">                                                   
+            <% for(var o of data){ %>
+                <div class="col-xl-6  col-lg-6  col-md-4  col-sm-6 col-12 mb-40">
+                    <div class="single-product bg-white position-relative pb-30" style="width: 400px;height: 500px;margin: 100px;">
+                        <div class="single-product-img position-relative">
+                            <a href="/product"><img class="height100" src="<%=o.image %>" alt=""></a>
+                            <div class="single-product-hover-img position-absolute">
+                                <a href="/product"><img class="height100" src="<%=o.image %>" alt=""></a>
+                                <ul class="single-product-button d-flex position-absolute">
+                                    <li data-toggle="tooltip" data-selector="true" data-placement="bottom" title="Add to option"><a href="#"><span class="icon-shopping-bag"></span></a></li>
+                                    <li data-toggle="tooltip" data-selector="true" data-placement="bottom" title="Utopia Towels Kitchen"><a href="#" data-toggle="modal" data-target="#product-modal"><span class="icon-eye"></span></a></li>
+                                    <li data-toggle="tooltip" data-selector="true" data-placement="bottom" title="Add to wishlist"><a href="#"><span class="icon-heart"></span></a></li>
+                                </ul>
+                            </div><!-- /single-product-hover-img -->
+                        </div><!-- /single-product-img -->
+                        <h5 class="product-name pt-20 pl-20"><a href="/product"><%=o.com_name %></o></a></h5>
+                        <div class="product-price pl-20 d-inline-block">
+                            <span class="black-color"><%=o.price %></span>
                         </div>
-                    </div>
+                        <div class="product-dot d-inline-block float-right pr-20">
+                            <span class="darkblue-bg"></span>
+                            <span class="lower-blue-bg"></span>
+                            <span class="pink-bg"></span>
+                        </div><!-- /product-dot -->
+                    </div><!-- /single-product -->
+                </div><!-- /col -->
+           <% } %>
                 </div>
-            </div>
-            <!-- Modal end -->
 
         </main>
-    </form>
         <!-- All js here -->
         <script src="../static/js/modernizr-3.5.0.min.js"></script>
         <script src="../static/js/jquery-1.12.4.min.js"></script>

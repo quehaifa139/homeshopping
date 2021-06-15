@@ -19,7 +19,7 @@
     width: 240px;
     height: 35px;
     margin-top: 59px;
-    margin-left: 373px;
+    margin-left: 234px;
    }
    .nav_bar button{
        width: 130px;
@@ -36,12 +36,18 @@
        border-radius: 6px;
       display: inline-block;
       text-align: center;
-      margin-left: 857px;
+      margin-left: 737px;
       margin-top: -41px;
       line-height: 40px;
       text-decoration: none;
       color: white;
    } 
+   .nav_bar div button{
+    display: inline-block;
+    position: absolute;
+    margin-left: 1000px;
+    margin-top: -40px;
+   }
 .add{
     margin-left: 110px;
 }
@@ -96,13 +102,20 @@
 </style>
 <body>
 <div>
+    <form action="/background/search" method="POST">
     <div class="nav_bar">
-        <form action="/background" method="POST">
-        <input placeholder="What you want to query" name="search" value="<%= datas.com_id %>">
+        
+        <input placeholder="What are  you want to query" name="search">
         <button type="submit" class="search">search</button>
     </form>
-        <a href="/add">add</a>
+        <div>
+            <a href="/add">add</a>
+        <form action="/background/empty" method="POST">
+            <button type="submit">empty</button>
+        </form>
+        </div>
     </div>
+
     <div class="tab">
         <table border="2px" align="center" cellspacing="0px" cellpadding="10px">
             <thead>
@@ -119,15 +132,16 @@
             <tbody>
                 <% for(var i = 0; i < datas.length; i++) {%>
                 <tr>
-                    <td><%= datas[i].com_id %></td>
-                    <td><%= datas[i].com_name %></td>
-                    <td><%= datas[i].c_type %></td>
-                    <td><%= datas[i].price %></td>
-                    <td><%= datas[i].descript %></td>
+                    <td name="com_id"><%= datas[i].com_id %></td>
+                    <td name="com_name"><%= datas[i].com_name %></td>
+                    <td name="c_type"><%= datas[i].c_type %></td>
+                    <td name="price"><%= datas[i].price %></td>
+                    <td name="descript"><%= datas[i].descript %></td>
+                   
                     <td>
                         <a href="/background/del/<%= datas[i].id %>" >delete</a>
                     
-                        <a href="/update/toUpdate/<%= datas[i].com_id %>" >update</a>
+                        <a href="/update/toUpdate/<%= datas[i].id %>" >update</a>
                     
                     </td>
                 </tr>
@@ -136,8 +150,10 @@
         </table>
     </div>
     <div class="inferior">
-        <button>up</button>
-        <button>down</button>
+        <button id="prev">up</button>
+        <span id="pages"></span>
+        <button id="next">down</button>
+
     </div>
 
 </div>

@@ -19,7 +19,7 @@ router.post("/",function(req,res){
     var mer_id = req.body.mer_id;
     var phonenumber = req.body.phone;
     var a_query = 'insert into merchant values("'+name+'","'+password+'","'+mer_id+'","'+phonenumber+'")'
-    connection.query(a_query,function(err,rows){
+    connection.queryParam(a_query,function(err,rows){
         if(err){
             console.log(err);
             return;

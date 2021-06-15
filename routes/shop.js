@@ -7,7 +7,7 @@ var connection = require('./user');
 router.get('/', function(req, res, next) {
   //查询语句
   var sql = 'select * from commodity';
-  connection.query(sql,(err,result) =>{
+  connection.queryParam(sql,(err,result) =>{
     console.log(err);
     console.log(result);
     res.render('shop', { title: 'Express' ,data:result});

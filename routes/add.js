@@ -14,7 +14,8 @@ router.post("/",function(req,res,next){
     var type = req.body.c_type;
     var price = req.body.price;
     var descript = req.body.descript;
-    connection.query("insert into commodity(com_id,com_name,c_type,price,descript) values('"+id+"','"+name+"','"+ type+"','"+price+"','"+descript+"')",function(err,results){
+    var image = req.body.image;
+    connection.queryParam("insert into commodity(com_id,com_name,c_type,price,descript,image) values('"+id+"','"+name+"','"+ type+"','"+price+"','"+descript+"','"+image+"') ",function(err,results){
         if(err){
             res.send("新增失败"+err);
         }else {

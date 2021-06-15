@@ -13,12 +13,13 @@ router.get('/', function(req, res, next) {
 router.post("/",function(req,res){
         var username = req.body.username;
         var password = req.body.password;
-        var query = 'select username,password from tab_user where username ="'+username+'" and password = "'+password+'"';
-        connection.query(query,function(err,rows){
+        var query = 'select username,password from tab_user where username =? and password = ?'
+        connection.queryParam(query,[username,password],function(err,rows){
             if(err){
                 console.log(err);
                 return;
-            }console.log(rows[0]);
+            }
+            console.log(rows[0]);
             if(!rows[0]){
                return res.json({"status":-1});
             }else{

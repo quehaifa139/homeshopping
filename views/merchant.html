@@ -50,14 +50,19 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		
 										<p>Merchant Name </p>
 										<input type="text" id="name_one" name="name_one" />
+										<label id="error1" style="color: red;font-size: 10px;display: inline;"></label>
 										<p>Password</p>
 										<input type="password" id="password_one" name="password_one" /> 
+										<label id="error2" style="color: red;font-size: 10px;display: inline;"></label>
 										<p>Confirm Password</p>
 										<input type="password" id="password_two" name="password" /> 
+										<label id="error3" style="color: red;font-size: 10px;display: inline;"></label>
 										<p>Merchant id</p>
 										<input type="text" id="mer_id-one" name="mer_id"/>
-                                        <p>phonenumber</p>
+                                        <label id="error4" style="color: red;font-size: 10px;display: inline;"></label>
+										<p>phonenumber</p>
 										<input type="text" id="phonenumber" name="phonenumber"/>
+										<label id="error5" style="color: red;font-size: 10px;display: inline;"></label>
 										<label class="anim">
 											<input type="checkbox" class="checkbox">
 											<span> Remember me ?</span> 
@@ -78,29 +83,70 @@ License URL: http://creativecommons.org/licenses/by/3.0/
    <script>
 
     //注册时点击事件
-     $("#enter").click(function(){
-		var name = $("#name_one").val();
-		var pass1 = $("#password_one").val();
+     $("document").ready(function(){
+		$("#enter").click(function(){
+        var name = $("#name_one").val();
+		var pass = $("#password_one").val();
 		var pass2 = $("#password_two").val();
-		var merid = $("#mer_id-one").val();
+		var mer_id = $("#mer_id-one").val();
 		var phone = $("#phonenumber").val();
-		if(name.length == 0 ){
-			alert("输入内容不能为空")
-		}else if(pass1.length ==0){
-            alert("请输入您的密码")
-		}else if(pass2.length ==0){
-			alert("请确认密码")
-		}else if(merid.length ==0){
-			alert("请输入您的商家编号")
-		}else if(phone.length ==0){
-			alert("请输入您的电话号码")
-		}else if(pass1 != pass2){
-			alert("你的密码两次输入不一致")
-		}else{
-			$.ajax({
+		var password1=/[a-zA-Z0-9]{6,12}/;
+		var id = /^\d{4,10}$/;
+		var uphone = /^1[3|4|5|8][0-9]\d{4,8}$/;
+		//验证用户名格式是否正确
+		if(name.length==0){
+                  $("#error1").html("用户名不可以为空");
+                 return false;
+             }else if(name.length < 4 || name.length >10){
+                 $("#error1").html("请输入长度为4-10之间的用户名");
+                  return false;
+             }else{
+                  $("#error1").html("");
+              }
+			//验证密码格式是否正确
+		if(pass.length==0){
+                 $("#error2").html("密码不可以为空");
+                 return false;
+             }else if(!password1.test(pass)){
+                    $("#error2").html("请输入6-12位以字母开头的字母和数字的组合密码");
+                   return false;
+                 }else{
+					$("#error2").html("") 
+				 }
+        //验证前后密码是否一致
+		if(pass2.length==0){
+                 $("#error3").html("请确认您的密码");
+                 return false;
+             }else if(pass != pass2){
+                    $("#error3").html("前后密码不一致，请重新输入");
+                   return false;
+                 }else{
+					$("#error3").html("") 
+				 }
+		//验证商家id的格式是否合法
+		if(mer_id.length==0){
+                 $("#error4").html("商家id不可以为空");
+                 return false;
+             }else if(!id.test(mer_id)){
+                    $("#error4").html("请输入6-12位数字组成的商家id");
+                   return false;
+                 }else{
+					$("#error4").html("") 
+				 }
+		//验证手机号格式是否正确
+        if(phone.length==0){
+                 $("#error5").html("手机号码不可以为空");
+                 return false;
+             }else if(!uphone.test(phone)){
+                    $("#error5").html("请输入正确的电话号码");
+                   return false;
+                 }else{
+					$("#error5").html("") 
+				 }
+		$.ajax({
 			type:"post",
 			url :"/merchant",
-			data:{"name":name,"password":pass1,"mer_id":merid,"phone":phone},
+			data:{"name":name,"password":pass,"mer_id":mer_id,"phone":phone},
             success:function(data){
 				if(data.status==1){
 					alert("注册成功");
@@ -108,11 +154,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				}
 			}
         
-		})
-        
-		}
-		
+		})	
 	})
+	 })
 </script>
 </div>
 </body>

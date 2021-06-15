@@ -1,6 +1,6 @@
 var mysql = require("mysql");
 var db = {};
-db.query = function(sql,callback){
+db.queryParam = function(sql,param,callback){
     var con = mysql.createConnection({
         host:"localhost",
         port:"3306",
@@ -9,7 +9,7 @@ db.query = function(sql,callback){
         database:"shopment"
     });
     
-    con.query(sql,(err,results) =>{
+    con.query(sql,param,(err,results) =>{
        callback(err,results);
     })
     con.end();

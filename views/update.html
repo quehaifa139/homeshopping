@@ -47,11 +47,12 @@
 <form action="/update" method="post">
     
     <% for(var i = 0; i < datas.length; i++) {%>
-    <label>com_id：</label><input type="text" name="com_id" value="<%= datas[i].com_id %>" ><br>
+    <input type="hidden" name="com_id" value="<%= datas[i].com_id %>" ><br>
     <label> com_name：</label><input type="text" name="com_name" value="<%= datas[i].com_name %>"><br>
     <label> c_type：</label><input type="text" name="c_type" value="<%= datas[i].c_type %>"><br>
     <label> price：</label><input type="text" name="price" value="<%= datas[i].price %>"><br>
     <label> descript：</label><input type="text" name="descript" value="<%= datas[i].descript %>"><br>
+    <label>image</label><input type="text" name="image" value="<%= datas[i].image %>"><br>
     <% } %>
     <input type="submit" value="submit" class="sub">
     <a href="/background">cancle</a>

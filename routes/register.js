@@ -13,8 +13,9 @@ router.get('/', function(req, res, next) {
 router.post("/",function(req,res){
         var username = req.body.username;
         var password = req.body.password;
-        var query = 'insert into tab_user(username,password) values("'+username+'","'+password+'")'
-        connection.query(query,function(err,rows){
+        var email = req.body.email;
+        var query = 'insert into tab_user(username,password,email) values(?,?,?)'
+        connection.queryParam(query,[username,password,email],function(err,rows){
             if(err){
                 console.log(err);
                 return;

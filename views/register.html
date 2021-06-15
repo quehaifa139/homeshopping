@@ -19,7 +19,7 @@
 </head>
 
 <body>
-		<div class="right-form-agile" style="    margin-top: 6px;margin-left: -19px;">
+		<div class="right-form-agile" style="margin-top: 6px;margin-left: -19px;">
 			<!-- <form action="/register" method="GET"> -->
 				<!-- form section start -->
 				<section class="w3l-hotair-form">
@@ -34,15 +34,19 @@
 								<div class="content-wthree">
 									<h2>Sign Up</h2>
 									<p>Create  Your Account</p>
-									<!-- <form action="/register" method="post"> -->
+								
 										<input type="text" class="uname"  placeholder="User Name"  id="username">
-										<input type="text" id="uemail" placeholder="User Email" required pattern="">
+										<div id = "error1" style="color: red;font-size: 10px;display: inline;"></div>
+										<input type="text" id="uemail" placeholder="User Email">
+										<div id="error2" style="color: red;font-size: 10px;display: inline;"></div>
 										<input type="password"  name="password" placeholder="User Password" id="password1">
+										<div id="error3" style="color: red;font-size: 10px;display: inline;"></div>
 										<input type="password" name="password2" id="password2"  placeholder="Confim Your Password">
+										<div id="error4" style="color: red;font-size: 10px;display: inline;"></div>
 										<button class="btn" type="submit" id="register">Sign Up</button>
-									<!-- </form> -->
+									</form>
                                    <br>
-								   <p style="margin: 15px;"><a href="/Login">Having a count? Login in</a></p>
+								   <p style="margin: 15px;"><a href="/login">Having a count? Login in</a></p>
 									<p style="margin: 20px;"><a href="/merchant">OR LOGIN WITH MERCHANT</a></p>
 								</div>
 								<div class="w3l_form align-self">
@@ -52,51 +56,74 @@
 							</div>
 							</div>
 							</section>
-							<!-- </form> -->
+						
 		</div>
 	</div>
 	<!-- //content -->
 	<!-- password-script -->
     <script src="../static/js/jquery-1.12.4.min.js"></script>
-	<!-- //password-script -->
+	<!-- //password-script --->
+
  <script>
-     $("#register").click(function(){
-		var name = $("#username").val();
-		var email = $("#uemail").val();
-		var pass1 = $("#password1").val();
-		var pass2 = $("#password2").val();
-		if(name.length == 0){
-			alert("请输入您的用户名")
-		}
-		if(email.length == 0){
-			alert("请输入正确的邮箱地址")
-		}
-		if(pass1.length == 0){
-			alert("请输入您的密码")
-		}
-		if(pass2.length == 0){
-			alert("请确认您的密码")
-		}
-		if(pass2 != pass1){
-			alert("两次密码不一致")
-		}else if(name.length < 3 || name.length > 10){
-			alert("用户名长度有误，请输入长度为3-10个字符的用户名")
-		}else if(pass1.length < 6 || pass1.length > 12){
-			alert("密码输入有误，请输入长度为6-12的字符加数字的组合密码")
-		}else{
+	  $("document").ready(function(){
+         $("#register").click(function(){
+             var user=$("#username").val();
+             var username=/^[a-z]{4,10}/i;
+            if(user.length==0){
+                  $("#error1").html("用户名不可以为空");
+                 return false;
+             }else if(!username.test(user)){
+                 $("#error1").html("请输入长度为4-10的字母组成的用户名");
+                  return false;
+             }else{
+                  $("#error1").html("");
+              }
+			  var email=$("#uemail").val();
+              var email1=/^[\w]+(\.[\w]+)*@[\w]+(\.[\w]+)+$/;
+            if(email.length==0){
+                $("#error2").html("email不可以为空");
+               return false;
+           }else if(!email1.test(email)){
+                $("#error2").html("请输入合法电子邮件");
+                return false;
+           }else{
+                 $("#error2").html("");
+           }
+			  var password=$("#password1").val();
+              var password1=/[a-zA-Z0-9]{6,16}/;
+            if(password.length==0){
+                 $("#error3").html("密码不可以为空");
+                 return false;
+             }else if(!password1.test(password)){
+                    $("#error3").html("请输入6-10位以字母开头的字母和数字的组合密码");
+                   return false;
+                 }else{
+					$("#error3").html("") 
+				 }
+			var pass2 = $("#password2").val();
+			if(pass2.length==0){
+				$("#error4").html("请确认您的密码");
+                   return false;
+			}else if(password != pass2){
+				$("#error4").html("前后密码不一致，请重新输入");
+				return false; 
+			}else{
+				$("#error4").html("")	
+			}	 
 			$.ajax({
 			type:"post",
 			url :"/register",
-			data:{"username":name,"password":pass1},
+			data:{"username":user,"password":password,"email":email},
 			success:function(data){
 				if(data.status==1){
 					alert("注册成功");
-                    window.location = "/login"
+                    window.location = "/login";
 				}
 			}
 		})
-		}
 	})
+		})
+		
 </script>
 </body>
 

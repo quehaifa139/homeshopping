@@ -5,7 +5,7 @@ var connection = require('./user');
 /* GET product.html */
 router.get('/', function(req, res, next) {
   var sql = 'select * from commodity';
-  connection.query(sql,(err,result) =>{
+  connection.queryParam(sql,(err,result) =>{
   res.render('product', { title: 'Express' ,data:result});
  })
 });
