@@ -14,8 +14,8 @@ router.post("/",function(req,res){
     var name = req.body.name;
     var password = req.body.password;
     var mer_id = req.body.mer_id;
-    var sql = 'select name,password,mer_id from merchant where name ="'+name+'" and password = "'+password+'"and mer_id = "'+mer_id+'"';
-    connection.queryParam(sql,function(err,rows){
+    var sql = 'select name,password,mer_id from merchant where name =? and password = ? and mer_id = ?';
+    connection.queryParam(sql,[name,password,mer_id],function(err,rows){
       if(err){
           console.log(err);
       }

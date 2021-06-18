@@ -10,7 +10,7 @@ router.get('/', function(req, res, next) {
   connection.queryParam(sql,(err,result) =>{
     console.log(err);
     console.log(result);
-    res.render('shop', { title: 'Express' ,data:result});
+    res.render('shop', { title: 'Express' ,datas:result});
  })
 });
 

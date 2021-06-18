@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-
+//引入数据库操作
 var connection = require("./user");
 
 

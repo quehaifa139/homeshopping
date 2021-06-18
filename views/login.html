@@ -20,7 +20,6 @@
 </head>
 
 <body>
-<!-- <form action="/login" method="GET"> -->
     <!-- form section start -->
     <section class="w3l-hotair-form">
         <h1>Hotair Log In Form</h1>
@@ -63,7 +62,7 @@
                     </div>
                 </div>
             </div>
-            <!-- //form -->
+           
         </div>
         
     </section>
@@ -82,10 +81,8 @@
 					alert("登录成功");
 					window.location.href = "/"
 				}else if(data.status == -1){
-                    alert("该用户不存在，请先进行注册")
-                }else{
-					alert("用户名或密码错误，登录失败，请重新登录")
-				}
+                    alert("该用户不存在，请先进行注册，如已注册，请检查用户名和密码是否输入正确")
+                }
 			}
 		})
 	});

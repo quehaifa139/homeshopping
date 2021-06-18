@@ -8,7 +8,7 @@ router.get('/', function(req, res, next) {
  var sql = 'select * from shoppingCar';
  connection.queryParam(sql,(err,result) =>{
        console.log(err);
-    res.render('shoppingCar', { title: 'Express',data:result });
+    res.render('shoppingCar', { title: 'Express',datas:result });
    })
 });
 

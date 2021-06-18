@@ -25,8 +25,8 @@ router.post("/",function(req,res,next){
     var type = req.body.c_type;
     var price = req.body.price;
     var descript = req.body.descript;
-    var sql = "update commodity set com_id = '"+ com_id +"',com_name = '"+ name +"',c_type = '"+ type +"',price = '"+ price +"',descript = '"+ descript +"'where com_id = '"+ com_id +"'";
-    connection.queryParam(sql,function(err,rows){
+    var sql = "update commodity set com_id = ?,com_name = ?,c_type = ?,price = ?,descript = ? where com_id = ?";
+    connection.queryParam(sql,[com_id,name,type,price,descript,com_id],function(err,rows){
         if(err){
             res.send("修改失败 " + err);
         }else {
